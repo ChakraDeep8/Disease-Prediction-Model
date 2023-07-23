@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="First" />
+    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/deep/PycharmProjects/DiseasePrediction",
     "node.js.detected.package.eslint": "true",
@@ -187,7 +187,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690110489903</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="First">
+      <created>1690112644765</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690112644765</updated>
+    </task>
+    <task id="LOCAL-00012" summary="KNN_pickle">
+      <created>1690112868079</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1690112868079</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,9 +212,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Pikcle" />
     <MESSAGE value="Pikcle_stroke" />
-    <MESSAGE value="First" />
     <MESSAGE value="Updated stoke dataset" />
     <MESSAGE value="Stroke webpage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stroke webpage" />
+    <MESSAGE value="First" />
+    <MESSAGE value="KNN_pickle" />
+    <option name="LAST_COMMIT_MESSAGE" value="KNN_pickle" />
   </component>
 </project>
