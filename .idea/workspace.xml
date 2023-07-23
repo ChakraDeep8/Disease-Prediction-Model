@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Classifier_model_builder_heart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/heart.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,33 +32,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/deep/PycharmProjects/DiseasePrediction",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/deep/PycharmProjects/DiseasePrediction&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Pages" />
-      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction" />
-      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Dic" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction" />
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Pages" />
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Dic" />
     </key>
   </component>
   <component name="RunManager">
@@ -227,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690128242073</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Some Changes">
+      <created>1690129410403</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690129410403</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +252,7 @@
     <MESSAGE value="stroke_knn_pickle" />
     <MESSAGE value="Second update" />
     <MESSAGE value="Third update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third update" />
+    <MESSAGE value="Some Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some Changes" />
   </component>
 </project>
