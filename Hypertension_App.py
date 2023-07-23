@@ -63,7 +63,7 @@ else:
 
     input_df = patient_details()
 
-hypertension_disease_raw = pd.read_csv('../res/hypertension_data.csv')
+hypertension_disease_raw = pd.read_csv('res/hypertension_data.csv')
 hypertension = hypertension_disease_raw.drop(columns=['target'])
 df = pd.concat([input_df, hypertension], axis=0)
 
@@ -84,11 +84,11 @@ else:
     st.write(df)
 
 # Load the classification models
-load_clf_NB = pickle.load(open('../res/hypertension_disease_classifier_NB.pkl', 'rb'))
-load_clf_KNN = pickle.load(open('../res/hypertension_disease_classifier_KNN.pkl', 'rb'))
-load_clf_DT = pickle.load(open('../res/hypertension_disease_classifier_DT.pkl', 'rb'))
-load_clf_LR = pickle.load(open('../res/hypertension_disease_classifier_LR.pkl', 'rb'))
-load_clf_RF = pickle.load(open('../res/hypertension_disease_classifier_RF.pkl', 'rb'))
+load_clf_NB = pickle.load(open('res/hypertension_disease_classifier_NB.pkl', 'rb'))
+load_clf_KNN = pickle.load(open('res/hypertension_disease_classifier_KNN.pkl', 'rb'))
+load_clf_DT = pickle.load(open('res/hypertension_disease_classifier_DT.pkl', 'rb'))
+load_clf_LR = pickle.load(open('res/hypertension_disease_classifier_LR.pkl', 'rb'))
+load_clf_RF = pickle.load(open('res/hypertension_disease_classifier_RF.pkl', 'rb'))
 
 # Apply models to make predictions
 prediction_NB = load_clf_NB.predict(df)

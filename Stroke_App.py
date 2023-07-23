@@ -57,7 +57,7 @@ else:
 
     input_df = patient_details()
 
-stroke_disease_raw = pd.read_csv('../res/stroke_data.csv')
+stroke_disease_raw = pd.read_csv('res/stroke_data.csv')
 stroke = stroke_disease_raw.drop(columns=['stroke'])
 df = pd.concat([input_df, stroke], axis=0)
 
@@ -78,11 +78,11 @@ else:
     st.write(df)
 
 # Load the classification models
-load_clf_NB = pickle.load(open('../res/stroke_disease_classifier_NB.pkl', 'rb'))
-load_clf_KNN = pickle.load(open('../res/stroke_disease_classifier_KNN.pkl', 'rb'))
-load_clf_DT = pickle.load(open('../res/stroke_disease_classifier_DT.pkl', 'rb'))
-load_clf_LR = pickle.load(open('../res/stroke_disease_classifier_LR.pkl', 'rb'))
-load_clf_RF = pickle.load(open('../res/stroke_disease_classifier_RF.pkl', 'rb'))
+load_clf_NB = pickle.load(open('res/stroke_disease_classifier_NB.pkl', 'rb'))
+load_clf_KNN = pickle.load(open('res/stroke_disease_classifier_KNN.pkl', 'rb'))
+load_clf_DT = pickle.load(open('res/stroke_disease_classifier_DT.pkl', 'rb'))
+load_clf_LR = pickle.load(open('res/stroke_disease_classifier_LR.pkl', 'rb'))
+load_clf_RF = pickle.load(open('res/stroke_disease_classifier_RF.pkl', 'rb'))
 
 # Apply models to make predictions
 prediction_NB = load_clf_NB.predict(df)

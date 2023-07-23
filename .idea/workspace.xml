@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Hypertension_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Stroke_App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690112968877</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Third update">
+      <created>1690128242073</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1690128242073</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +244,7 @@
     <MESSAGE value="KNN_pickle" />
     <MESSAGE value="stroke_knn_pickle" />
     <MESSAGE value="Second update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second update" />
+    <MESSAGE value="Third update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third update" />
   </component>
 </project>
