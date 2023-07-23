@@ -6,13 +6,13 @@ import numpy as np
 
 st.set_page_config(
     page_title="Stroke Detector",
-    page_icon="🩸"
+    page_icon="👨‍⚕️"
 )
 
 st.write("""
-# Hypertension Blood Pressure Detector
+# Stroke Detector
 
-This app predicts whether a person have any hypertension blood pressure or not
+This app predicts whether a person have chances for stroke or not
 
 """)
 
@@ -26,35 +26,30 @@ if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file)
 else:
     def patient_details():
-        age = st.sidebar.slider('Age', 0, 98)
         sex = st.sidebar.selectbox('Sex', ['Male', 'Female'])
-        hypertension = st.sidebar.selectbox('Hypertension',['Yes', 'No'])
-        heart_disease = st.sidebar.selectbox('Marraige Status', ['Yes', 'No'])
-        serum_cholesterol = st.sidebar.slider('Serum Cholesterol', 126, 564)
-        fasting_bs = st.sidebar.selectbox('Fasting Blood Sugar',
-                                          ['Yes', 'No'])  # if the patient's fasting blood sugar > 120 mg/dl
-        resting_ecg = st.sidebar.selectbox('Resting ECG',
-                                           ['Normal', 'ST-T Wave Abnormality', 'Left Ventricular Hypertrophy'])
-        max_hr = st.sidebar.slider('Max Heart Rate', 71, 202)
-        exercise_angina = st.sidebar.selectbox('Exercise-Induced Angina', ['Yes', 'No'])
-        oldpeak = st.sidebar.slider('ST Depression Induced by Exercise Relative to Rest', 0.0, 6.2)
-        st_slope = st.sidebar.selectbox('ST Slope', ['Upsloping', 'Flat', 'Downsloping'])
-        major_vessels = st.sidebar.slider('Number of Major Vessels Colored by Fluoroscopy', 0, 4)
-        thalassemia = st.sidebar.slider('Thalassemia', 0, 3)
+        age = st.sidebar.slider('Age', 0, 103)
+        hypertension = st.sidebar.selectbox('Hypertension', ['Yes', 'No'])
+        heart_disease = st.sidebar.selectbox('Heart Disease', ['Yes', 'No'])
+        marrige_status = st.sidebar.selectbox('Marraige Status', ['Yes', 'No'])
+        work_type = st.sidebar.selectbox('Work Type',
+                                         ['Never Worked', 'Children', 'Government Job', 'Self-Employed', 'Private'])
+        residence_type = st.sidebar.selectbox('Residence Type', ['Urban', 'Rural'])
+        glucose_level = st.sidebar.slider('Glucose level', 50, 272)
+
+        bmi = st.sidebar.slider('BMI', 10, 100)
+        smoking_status = st.sidebar.selectbox('Smoking status', ['Yes', 'No'])
 
         data = {'age': age,
                 'sex': sex,
-                'cp': hypertension,
-                'trestbps': resting_bp,
-                'chol': serum_cholesterol,
-                'fbs': fasting_bs,
-                'restecg': resting_ecg,
-                'thalach': max_hr,
-                'exang': exercise_angina,
-                'oldpeak': oldpeak,
-                'slope': st_slope,
-                'ca': major_vessels,
-                'thal': thalassemia, }
+                'hypertension': hypertension,
+                'heart_disease': heart_disease,
+                'ever_married': marrige_status,
+                'work_type': work_type,
+                'Residence_type': residence_type,
+                'avg_glucose_level': glucose_level,
+                'bmi': bmi,
+                'smoking_status': smoking_status,
+                }
 
         features = pd.DataFrame(data, index=[0])
         return features
@@ -62,12 +57,12 @@ else:
 
     input_df = patient_details()
 
-hypertension_disease_raw = pd.read_csv('res/hypertension_data.csv')
-hypertension = hypertension_disease_raw.drop(columns=['target'])
-df = pd.concat([input_df, hypertension], axis=0)
+stroke_disease_raw = pd.read_csv('../res/stroke_data.csv')
+stroke = stroke_disease_raw.drop(columns=['stroke'])
+df = pd.concat([input_df, stroke], axis=0)
 
 # Encoding of ordinal features
-encode = ['sex', 'cp', 'fbs', 'restecg', 'exang', 'slope']
+encode = ['sex', 'hypertension', 'heart_disease', 'ever_married', 'work_type', 'Residence_type', 'smoking_status']
 for col in encode:
     dummy = pd.get_dummies(df[col], prefix=col)
     df = pd.concat([df, dummy], axis=1)
@@ -83,11 +78,11 @@ else:
     st.write(df)
 
 # Load the classification models
-load_clf_NB = pickle.load(open('res/hypertension_disease_classifier_NB.pkl', 'rb'))
-load_clf_KNN = pickle.load(open('res/hypertension_disease_classifier_KNN.pkl', 'rb'))
-load_clf_DT = pickle.load(open('res/hypertension_disease_classifier_DT.pkl', 'rb'))
-load_clf_LR = pickle.load(open('res/hypertension_disease_classifier_LR.pkl', 'rb'))
-load_clf_RF = pickle.load(open('res/hypertension_disease_classifier_RF.pkl', 'rb'))
+load_clf_NB = pickle.load(open('../res/stroke_disease_classifier_NB.pkl', 'rb'))
+load_clf_KNN = pickle.load(open('../res/stroke_disease_classifier_KNN.pkl', 'rb'))
+load_clf_DT = pickle.load(open('../res/stroke_disease_classifier_DT.pkl', 'rb'))
+load_clf_LR = pickle.load(open('../res/stroke_disease_classifier_LR.pkl', 'rb'))
+load_clf_RF = pickle.load(open('../res/stroke_disease_classifier_RF.pkl', 'rb'))
 
 # Apply models to make predictions
 prediction_NB = load_clf_NB.predict(df)
@@ -106,7 +101,7 @@ def NB():
     st.subheader('Naive Bayes Prediction')
     NB_prediction = np.array([0, 1])
     if NB_prediction[prediction_NB] == 1:
-        st.write("<p style='font-size:20px;color: orange'></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
     else:
         st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
     st.subheader('Naive Bayes Prediction Probability')
@@ -118,7 +113,7 @@ def KNN():
     st.subheader('K-Nearest Neighbour Prediction')
     knn_prediction = np.array([0, 1])
     if knn_prediction[prediction_KNN] == 1:
-        st.write("<p style='font-size:20px;color: orange'><b>Heart Disease Detected.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
     else:
         st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
     st.subheader('KNN Prediction Probability')
@@ -130,7 +125,7 @@ def DT():
     st.subheader('Decision Tree Prediction')
     DT_prediction = np.array([0, 1])
     if DT_prediction[prediction_DT] == 1:
-        st.write("<p style='font-size:20px; color: orange'><b>Heart Disease Detected.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px; color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
     else:
         st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
     st.subheader('Decision Tree Prediction Probability')
@@ -142,7 +137,7 @@ def LR():
     st.subheader('Logistic Regression Prediction')
     DT_prediction = np.array([0, 1])
     if DT_prediction[prediction_DT] == 1:
-        st.write("<p style='font-size:20px; color: orange'><b>You have hypertension.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px; color: orange'><b>You are getting stroke.<b></p>", unsafe_allow_html=True)
     else:
         st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
     st.subheader('Logistic Regression Probability')
@@ -154,7 +149,7 @@ def RF():
     st.subheader('Random Forest Prediction')
     DT_prediction = np.array([0, 1])
     if DT_prediction[prediction_DT] == 1:
-        st.write("<p style='font-size:20px; color: orange'><b>You have hypertension.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px; color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
     else:
         st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
     st.subheader('Random Forest Probability')
@@ -162,52 +157,37 @@ def RF():
     cmb.plt_LR()
 
 
-def select_best_algorithm():
-    # Create a dictionary to store the accuracies
-    accuracies = {
-        'Naive Bayes': cmb.nb_accuracy,
-        'KNN': cmb.knn_accuracy,
-        'Decision Tree': cmb.dt_accuracy,
-        'Logistic Regression': cmb.lr_accuracy,
-        'Random Forest': cmb.rf_accuracy
-
-    }
-
-    # Find the algorithm with the highest accuracy
-    best_algorithm = max(accuracies, key=accuracies.get)
-    best_accuracy = accuracies[best_algorithm]
-
-    # Display the results
-    st.write("<p style='font-size:24px;'>Best Algorithm: {}</p>".format(best_algorithm), unsafe_allow_html=True)
-
-
 def predict_best_algorithm():
     NB_prediction = np.array([0, 1])
     knn_prediction = np.array([0, 1])
     DT_prediction = np.array([0, 1])
-    LR_prediction = np.array([0 , 1])
-    RF_prediction = np.array([0 , 1])
+    LR_prediction = np.array([0, 1])
+    RF_prediction = np.array([0, 1])
 
     if NB_prediction[prediction_NB] == 1:
-        st.write("<p style='font-size:20px;color: orange'><b>You have hypertension. <b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke. <b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:24px;'>Best Algorithm: Naive Bayes</p>", unsafe_allow_html=True)
         cmb.plt_NB()
     elif knn_prediction[prediction_KNN] == 1:
-        st.write("<p style='font-size:20px;color: orange'><b>You have hypertension.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:24px;'>Best Algorithm: K-Nearest Neighbour</p>", unsafe_allow_html=True)
         cmb.plt_KNN()
     elif DT_prediction[prediction_DT] == 1:
-        st.write("<p style='font-size:20px;color: orange'><b>You have hypertension.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:24px;'>Best Algorithm: Decision Tree</p>", unsafe_allow_html=True)
         cmb.plt_DT()
     elif LR_prediction[prediction_LR] == 1:
-        st.write("<p style='font-size:20px;color: orange'><b>You have hypertension.</b></p>", unsafe_allow_html=True)
-        cmb.plt_DT()
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:24px;'>Best Algorithm: Logistic Regression</p>", unsafe_allow_html=True)
+        cmb.plt_LR()
     elif RF_prediction[prediction_RF] == 1:
-        st.write("<p style='font-size:20px;color: orange'><b>You have hypertension.</b></p>", unsafe_allow_html=True)
-        cmb.plt_DT()
+        st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>", unsafe_allow_html=True)
+        st.write("<p style='font-size:24px;'>Best Algorithm: Random Forest</p>", unsafe_allow_html=True)
+        cmb.plt_RF()
     else:
         st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
 
 
 # Displays the user input features
 st.subheader('Patient Report')
-select_best_algorithm()
 predict_best_algorithm()

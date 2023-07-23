@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="" />
+    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Hypertension_App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Stroke_App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Pages" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Dic" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
@@ -201,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690112868079</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="stroke_knn_pickle">
+      <created>1690112928425</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690112928425</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Second update">
+      <created>1690112968877</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1690112968877</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +238,8 @@
     <MESSAGE value="Stroke webpage" />
     <MESSAGE value="First" />
     <MESSAGE value="KNN_pickle" />
-    <option name="LAST_COMMIT_MESSAGE" value="KNN_pickle" />
+    <MESSAGE value="stroke_knn_pickle" />
+    <MESSAGE value="Second update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second update" />
   </component>
 </project>
