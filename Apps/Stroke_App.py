@@ -188,4 +188,5 @@ def app():
 
     # Displays the user input features
     st.subheader('Patient Report')
+    st.dataframe(input_df)
     predict_best_algorithm()

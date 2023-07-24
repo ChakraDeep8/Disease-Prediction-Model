@@ -211,7 +211,15 @@ def plt_RF():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     return st.pyplot(), accuracy()
+models = {
+    'Naive Bayes': nb_classifier_report,
+    'K-Nearest Neighbors (KNN)': knn_classifier_report,
+    'Decision Tree': dt_classifier_report,
+    'Logistic Regression': lr_classifier_report,
+    'Random Forest': rf_classifier_report
+}
 
+best_model = max(models, key=models.get)
 
 # Saving the model
 pickle.dump(nb_classifier, open('res/heart_disease_classifier_NB.pkl', 'wb'))

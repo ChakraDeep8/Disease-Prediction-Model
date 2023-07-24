@@ -10,8 +10,9 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
 
-stroke = pd.read_csv('res/stroke_data.csv')
+stroke = pd.read_csv('res\stroke_data.csv')
 
 # Ordinal feature encoding
 
@@ -40,6 +41,7 @@ nb_predictions = nb_classifier.predict(X_test)
 # Calculate confusion matrix and accuracy for Naive Bayes classifier
 nb_cm = confusion_matrix(y_test, nb_predictions)
 nb_accuracy = accuracy_score(y_test, nb_predictions)
+nb_classifier_report = classification_report(y_test, nb_predictions)
 
 
 def plt_NB():
@@ -75,6 +77,7 @@ knn_classifier.fit(X_train, y_train)
 # Predict using the K-Nearest Neighbors classifier
 knn_predictions = knn_classifier.predict(X_test)
 knn_accuracy = accuracy_score(y_test, knn_predictions)
+knn_classifier_report = classification_report(y_test, knn_predictions)
 
 
 def plt_KNN():
@@ -112,6 +115,7 @@ dt_predictions = dt_classifier.predict(X_test)
 # Calculate confusion matrix and accuracy for Decision Tree classifier
 dt_cm = confusion_matrix(y_test, dt_predictions)
 dt_accuracy = accuracy_score(y_test, dt_predictions)
+dt_classifier_report = classification_report(y_test, dt_predictions)
 
 
 def plt_DT():
@@ -149,6 +153,7 @@ lr_predictions = lr_classifier.predict(X_test)
 # Calculate confusion matrix and accuracy for Logistic Regression classifier
 lr_cm = confusion_matrix(y_test, nb_predictions)
 lr_accuracy = accuracy_score(y_test, nb_predictions)
+lr_classifier_report = classification_report(y_test, lr_predictions)
 
 
 def plt_LR():
@@ -186,7 +191,7 @@ rf_predictions = rf_classifier.predict(X_test)
 # Calculate confusion matrix and accuracy for Random Forest classifier
 rf_cm = confusion_matrix(y_test, nb_predictions)
 rf_accuracy = accuracy_score(y_test, nb_predictions)
-
+rf_classifier_report = classification_report(y_test, rf_predictions)
 
 def plt_RF():
     def accuracy():
@@ -214,9 +219,20 @@ def plt_RF():
     return st.pyplot(), accuracy()
 
 
-#Saving the model
+models = {
+    'Naive Bayes': nb_classifier_report,
+    'K-Nearest Neighbors (KNN)': knn_classifier_report,
+    'Decision Tree': dt_classifier_report,
+    'Logistic Regression': lr_classifier_report,
+    'Random Forest': rf_classifier_report
+}
+
+best_model = max(models, key=models.get)
+"""
+# Saving the model
 pickle.dump(nb_classifier, open('res/stroke_disease_classifier_NB.pkl', 'wb'))
 pickle.dump(knn_classifier, open('res/stroke_disease_classifier_KNN.pkl', 'wb'))
 pickle.dump(dt_classifier, open('res/stroke_disease_classifier_DT.pkl', 'wb'))
 pickle.dump(lr_classifier, open('res/stroke_disease_classifier_LR.pkl', 'wb'))
 pickle.dump(rf_classifier, open('res/stroke_disease_classifier_RF.pkl', 'wb'))
+"""

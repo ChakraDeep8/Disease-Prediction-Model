@@ -5,19 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/multiapp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-team.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/hypertension_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_model_builder_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_model_builder_hypertension.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_model_builder_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Hypertension_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stroke_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Hypertension_App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/resource/Dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resource/heart.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/heart_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/heart_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/heart_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/heart_disease_classifier_NB.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/heart_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resource/hypertension_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/hypertension_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/hypertension_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/hypertension_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/hypertension_disease_classifier_NB.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/resource/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resource/stroke_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/stroke_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/stroke_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/stroke_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/stroke_disease_classifier_NB.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resource/stroke_disease_classifier_RF.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +58,9 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2SvsXvopiBfvBLkDHiYmxZWjp9S" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -267,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690131482996</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Web page buildup">
+      <option name="closed" value="true" />
+      <created>1690191289621</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690191289621</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +317,7 @@
     <MESSAGE value="Third update" />
     <MESSAGE value="Some Changes" />
     <MESSAGE value="implement heart disease" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement heart disease" />
+    <MESSAGE value="Web page buildup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Web page buildup" />
   </component>
 </project>

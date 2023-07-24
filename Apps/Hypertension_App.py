@@ -156,7 +156,7 @@ def app():
         st.subheader('Random Forest Probability')
         st.write(prediction_proba_DT)
         cmb.plt_LR()
-
+    '''
     def predict_best_algorithm():
         NB_prediction = np.array([0, 1])
         knn_prediction = np.array([0, 1])
@@ -191,7 +191,9 @@ def app():
             cmb.plt_DT()
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-
+'''
     # Displays the user input features
     st.subheader('Patient Report')
-    predict_best_algorithm()
+    st.dataframe(input_df)
+
+    #predict_best_algorithm()
