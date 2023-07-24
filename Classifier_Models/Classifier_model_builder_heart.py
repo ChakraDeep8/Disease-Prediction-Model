@@ -13,7 +13,6 @@ from sklearn.ensemble import RandomForestClassifier
 hype = pd.read_csv('res/heart.csv')
 
 # Ordinal feature encoding
-
 df = hype.copy()
 encode = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
 
@@ -207,6 +206,7 @@ def plt_RF():
     for i, j in np.ndindex(rf_cm.shape):
         plt.text(j, i, format(rf_cm[i, j], 'd'), ha='center', va='center',
                  color='white' if rf_cm[i, j] > thresh else 'black')
+
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
