@@ -1,6 +1,8 @@
+import time
+
 import streamlit as st
 import pandas as pd
-from Classifier_Models import Classifier_model_builder_hypertension as cmb
+from Classifier_Models import Classifier_model_builder_stroke as cmb
 import pickle
 import numpy as np
 
@@ -130,63 +132,93 @@ def app():
     def LR():
         st.subheader('Logistic Regression Prediction')
         DT_prediction = np.array([0, 1])
-        if DT_prediction[prediction_DT] == 1:
+        if DT_prediction[prediction_LR] == 1:
             st.write("<p style='font-size:20px; color: orange'><b>You are getting stroke.<b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
         st.subheader('Logistic Regression Probability')
-        st.write(prediction_proba_DT)
+        st.write(prediction_proba_LR)
         cmb.plt_LR()
 
     def RF():
         st.subheader('Random Forest Prediction')
         DT_prediction = np.array([0, 1])
-        if DT_prediction[prediction_DT] == 1:
+        if DT_prediction[prediction_RF] == 1:
             st.write("<p style='font-size:20px; color: orange'><b>You are getting stroke.</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
         st.subheader('Random Forest Probability')
-        st.write(prediction_proba_DT)
+        st.write(prediction_proba_RF)
         cmb.plt_LR()
 
     def predict_best_algorithm():
-        NB_prediction = np.array([0, 1])
-        knn_prediction = np.array([0, 1])
-        DT_prediction = np.array([0, 1])
-        LR_prediction = np.array([0, 1])
-        RF_prediction = np.array([0, 1])
-
-        if NB_prediction[prediction_NB] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke. <b></p>",
-                     unsafe_allow_html=True)
+        if cmb.best_model == 'Naive Bayes':
             st.write("<p style='font-size:24px;'>Best Algorithm: Naive Bayes</p>", unsafe_allow_html=True)
-            cmb.plt_NB()
-        elif knn_prediction[prediction_KNN] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>",
-                     unsafe_allow_html=True)
+            NB()
+
+        elif cmb.best_model == 'K-Nearest Neighbors (KNN)':
             st.write("<p style='font-size:24px;'>Best Algorithm: K-Nearest Neighbour</p>", unsafe_allow_html=True)
-            cmb.plt_KNN()
-        elif DT_prediction[prediction_DT] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>",
-                     unsafe_allow_html=True)
+            KNN()
+
+        elif cmb.best_model == 'Decision Tree':
             st.write("<p style='font-size:24px;'>Best Algorithm: Decision Tree</p>", unsafe_allow_html=True)
-            cmb.plt_DT()
-        elif LR_prediction[prediction_LR] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>",
-                     unsafe_allow_html=True)
+            DT()
+
+        elif cmb.best_model == 'Logistic Regression':
             st.write("<p style='font-size:24px;'>Best Algorithm: Logistic Regression</p>", unsafe_allow_html=True)
-            cmb.plt_LR()
-        elif RF_prediction[prediction_RF] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You are getting stroke.</b></p>",
-                     unsafe_allow_html=True)
+            LR()
+
+        elif cmb.best_model == 'Random Forest':
             st.write("<p style='font-size:24px;'>Best Algorithm: Random Forest</p>", unsafe_allow_html=True)
-            cmb.plt_RF()
+            RF()
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
 
     # Displays the user input features
-    st.subheader('Patient Report')
-    st.dataframe(input_df)
-    predict_best_algorithm()
+
+    with st.expander("Prediction Results"):
+        # Display the input dataframe
+        st.write("Your input values are shown below:")
+        st.dataframe(input_df)
+        # Call the predict_best_algorithm() function
+        predict_best_algorithm()
+
+    # Create a multiselect for all the plot options
+    selected_plots = st.multiselect("Select plots to display",
+                                    ["Naive Bayes", "K-Nearest Neighbors", "Decision Tree", "Logistic Regression",
+                                     "Random Forest"])
+
+    # Check the selected plots and call the corresponding plot functions
+
+    placeholder = st.empty()
+
+    # Check the selected plots and call the corresponding plot functions
+    if "Naive Bayes" in selected_plots:
+        with st.spinner("Generating Naive Bayes...."):
+            cmb.plt_NB()
+            time.sleep(1)
+
+    if "K-Nearest Neighbors" in selected_plots:
+        with st.spinner("Generating KNN...."):
+            cmb.plt_KNN()
+            time.sleep(1)
+
+    if "Decision Tree" in selected_plots:
+        with st.spinner("Generating Decision Tree...."):
+            cmb.plt_DT()
+            time.sleep(1)
+
+    if "Logistic Regression" in selected_plots:
+        with st.spinner("Generating Logistic Regression...."):
+            cmb.plt_LR()
+            time.sleep(1)
+
+    if "Random Forest" in selected_plots:
+        with st.spinner("Generating Random Forest...."):
+            cmb.plt_RF()
+            time.sleep(1)
+
+    # Remove the placeholder to display the list options
+    placeholder.empty()

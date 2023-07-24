@@ -12,10 +12,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-hype = pd.read_csv('res/heart.csv')
+url = "https://raw.githubusercontent.com/ChakraDeep8/Hypertension_Stroke_DiseasePrediction/master/res/heart.csv"
+heart = pd.read_csv(url)
 
 # Ordinal feature encoding
-df = hype.copy()
+df = heart.copy()
 encode = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
 
 for col in encode:
@@ -41,12 +42,16 @@ nb_predictions = nb_classifier.predict(X_test)
 nb_cm = confusion_matrix(y_test, nb_predictions)
 nb_accuracy = accuracy_score(y_test, nb_predictions)
 nb_classifier_report = classification_report(y_test, nb_predictions)
+nb_classifier_report_dict = classification_report(y_test, nb_predictions, output_dict=True)
 
 
 def plt_NB():
-    def accuracy():
-        st.write("<p style='font-size:24px;'>Accuracy (Naive Bayes): {:.2f}%</p>".format(nb_accuracy * 100),
-                 unsafe_allow_html=True)
+
+    def classifier_report():
+        report_df = pd.DataFrame(nb_classifier_report_dict).transpose()
+        # Display the classification report as a table using st.write()
+        st.write("Naive Bayes Classifier Report")
+        st.write(report_df)
         st.write()
 
     # Plot confusion matrix for Naive Bayes classifier
@@ -66,7 +71,11 @@ def plt_NB():
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    return st.pyplot(), accuracy()
+    col1, col2 = st.columns(2)
+    with col1:
+        classifier_report()
+    with col2:
+        st.pyplot()
 
 
 """________KNN Algorithm________"""
@@ -77,12 +86,15 @@ knn_classifier.fit(X_train, y_train)
 knn_predictions = knn_classifier.predict(X_test)
 knn_accuracy = accuracy_score(y_test, knn_predictions)
 knn_classifier_report = classification_report(y_test, knn_predictions)
+knn_classifier_report_dict = classification_report(y_test, knn_predictions, output_dict=True)
 
 
 def plt_KNN():
-    def accuracy():
-        st.write("<p style='font-size:24px;'>Accuracy (KNN): {:.2f}%</p>".format(knn_accuracy * 100),
-                 unsafe_allow_html=True)
+    def classifier_report():
+        report_df = pd.DataFrame(knn_classifier_report_dict).transpose()
+        # Display the classification report as a table using st.write()
+        st.write("K-Nearest Neighbors Report")
+        st.write(report_df)
         st.write()
 
     # Plot confusion matrix for Naive Bayes classifier
@@ -102,7 +114,11 @@ def plt_KNN():
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    return st.pyplot(), accuracy()
+    col1, col2 = st.columns(2)
+    with col1:
+        classifier_report()
+    with col2:
+        st.pyplot()
 
 
 """________Decision Tree________"""
@@ -115,11 +131,15 @@ dt_predictions = dt_classifier.predict(X_test)
 dt_cm = confusion_matrix(y_test, dt_predictions)
 dt_accuracy = accuracy_score(y_test, dt_predictions)
 dt_classifier_report = classification_report(y_test, dt_predictions)
+dt_classifier_report_dict = classification_report(y_test, dt_predictions, output_dict=True)
+
 
 def plt_DT():
-    def accuracy():
-        st.write("<p style='font-size:24px;'>Accuracy (Decision Tree): {:.2f}%</p>".format(dt_accuracy * 100),
-                 unsafe_allow_html=True)
+    def classifier_report():
+        report_df = pd.DataFrame(dt_classifier_report_dict).transpose()
+        # Display the classification report as a table using st.write()
+        st.write("Decision Tree Classifier Report")
+        st.write(report_df)
         st.write()
 
     # Plot confusion matrix for Naive Bayes classifier
@@ -139,7 +159,11 @@ def plt_DT():
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    return st.pyplot(), accuracy()
+    col1, col2 = st.columns(2)
+    with col1:
+        classifier_report()
+    with col2:
+        st.pyplot()
 
 
 """________Logistic Regression Algorithm________"""
@@ -152,11 +176,15 @@ lr_predictions = lr_classifier.predict(X_test)
 lr_cm = confusion_matrix(y_test, lr_predictions)
 lr_accuracy = accuracy_score(y_test, lr_predictions)
 lr_classifier_report = classification_report(y_test, lr_predictions)
+lr_classifier_report_dict = classification_report(y_test, lr_predictions, output_dict=True)
+
 
 def plt_LR():
-    def accuracy():
-        st.write("<p style='font-size:24px;'>Accuracy (Logistic Regression): {:.2f}%</p>".format(lr_accuracy * 100),
-                 unsafe_allow_html=True)
+    def classifier_report():
+        report_df = pd.DataFrame(lr_classifier_report_dict).transpose()
+        # Display the classification report as a table using st.write()
+        st.write("Logistic Regression Classifier Report")
+        st.write(report_df)
         st.write()
 
     # Plot confusion matrix for classifier
@@ -176,7 +204,11 @@ def plt_LR():
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    return st.pyplot(), accuracy()
+    col1, col2 = st.columns(2)
+    with col1:
+        classifier_report()
+    with col2:
+        st.pyplot()
 
 
 """________Random Forest Algorithm________"""
@@ -189,12 +221,15 @@ rf_predictions = rf_classifier.predict(X_test)
 rf_cm = confusion_matrix(y_test, rf_predictions)
 rf_accuracy = accuracy_score(y_test, rf_predictions)
 rf_classifier_report = classification_report(y_test, rf_predictions)
+rf_classifier_report_dict = classification_report(y_test, rf_predictions, output_dict=True)
 
 
 def plt_RF():
-    def accuracy():
-        st.write("<p style='font-size:24px;'>Accuracy (Random Forest): {:.2f}%</p>".format(rf_accuracy * 100),
-                 unsafe_allow_html=True)
+    def classifier_report():
+        report_df = pd.DataFrame(rf_classifier_report_dict).transpose()
+        # Display the classification report as a table using st.write()
+        st.write("Random Forest Classifier Report")
+        st.write(report_df)
         st.write()
 
     # Plot confusion matrix for  classifier
@@ -212,10 +247,16 @@ def plt_RF():
         plt.text(j, i, format(rf_cm[i, j], 'd'), ha='center', va='center',
                  color='white' if rf_cm[i, j] > thresh else 'black')
 
-
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    return st.pyplot(), accuracy()
+    col1, col2 = st.columns(2)
+    with col1:
+        classifier_report()
+    with col2:
+        st.pyplot()
+
+
+# Selecting the best suitable algorithm based on classifier_report
 models = {
     'Naive Bayes': nb_classifier_report,
     'K-Nearest Neighbors (KNN)': knn_classifier_report,
@@ -223,8 +264,8 @@ models = {
     'Logistic Regression': lr_classifier_report,
     'Random Forest': rf_classifier_report
 }
-
 best_model = max(models, key=models.get)
+print(type(nb_classifier_report))
 
 # Saving the model
 pickle.dump(nb_classifier, open('res/heart_disease_classifier_NB.pkl', 'wb'))
@@ -232,3 +273,4 @@ pickle.dump(knn_classifier, open('res/heart_disease_classifier_KNN.pkl', 'wb'))
 pickle.dump(dt_classifier, open('res/heart_disease_classifier_DT.pkl', 'wb'))
 pickle.dump(lr_classifier, open('res/heart_disease_classifier_LR.pkl', 'wb'))
 pickle.dump(rf_classifier, open('res/heart_disease_classifier_RF.pkl', 'wb'))
+
