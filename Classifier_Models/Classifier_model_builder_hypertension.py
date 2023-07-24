@@ -227,7 +227,7 @@ best_model = max(models, key=models.get)
 
 # Print the best algorithm
 print("The best algorithm is:", best_model)
-"""
+
 
 # Saving the model
 pickle.dump(nb_classifier, open('res/hypertension_disease_classifier_NB.pkl', 'wb'))
@@ -235,4 +235,3 @@ pickle.dump(knn_classifier, open('res/hypertension_disease_classifier_KNN.pkl', 
 pickle.dump(dt_classifier, open('res/hypertension_disease_classifier_DT.pkl', 'wb'))
 pickle.dump(lr_classifier, open('res/hypertension_disease_classifier_LR.pkl', 'wb'))
 pickle.dump(rf_classifier, open('res/hypertension_disease_classifier_RF.pkl', 'wb'))
-"""
