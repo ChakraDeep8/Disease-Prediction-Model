@@ -11,7 +11,7 @@ st.set_page_config(
 
 )
 
-image = Image.open("images/Health01.png")
+image = Image.open("images/Health Track.png")
 st.sidebar.image(image, use_column_width=True)
 
 st.markdown(

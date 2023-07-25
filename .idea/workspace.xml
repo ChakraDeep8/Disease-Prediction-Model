@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" afterDir="false" />
@@ -17,8 +16,10 @@
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_LR.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/kidney_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/kidney_disease_classifier_DT.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +330,23 @@
       <option name="project" value="LOCAL" />
       <updated>1690294229361</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added Kidney.py">
+      <option name="closed" value="true" />
+      <created>1690298893277</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1690298893277</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Kidney_app&#10;np.array({0,1})">
+      <option name="closed" value="true" />
+      <created>1690299615879</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1690299615879</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +373,8 @@
     <MESSAGE value="Kidney module added" />
     <MESSAGE value="med update" />
     <MESSAGE value="Update 3.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 3.0" />
+    <MESSAGE value="Added Kidney.py" />
+    <MESSAGE value="Kidney_app&#10;np.array({0,1})" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kidney_app&#10;np.array({0,1})" />
   </component>
 </project>
