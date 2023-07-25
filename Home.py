@@ -27,7 +27,7 @@ st.markdown(
 
 col1, col2 = st.columns([1, 1], gap="small")
 with col1:
-    image = Image.open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\images\\med.png')
+    image = Image.open('images/med.png')
     st.image(image, use_column_width="auto")
     col1.empty()
 with col2:
