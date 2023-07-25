@@ -266,7 +266,6 @@ models = {
 }
 
 best_model = max(models, key=models.get)
-
 # Saving the model
 pickle.dump(nb_classifier, open('res/stroke_disease_classifier_NB.pkl', 'wb'))
 pickle.dump(knn_classifier, open('res/stroke_disease_classifier_KNN.pkl', 'wb'))

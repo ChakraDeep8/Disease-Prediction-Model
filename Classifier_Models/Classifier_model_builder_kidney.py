@@ -12,9 +12,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-hype = pd.read_csv("C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\CKD_Preprocessed.csv")
+url = "https://raw.githubusercontent.com/ChakraDeep8/Hypertension_Stroke_DiseasePrediction/master/res/CKD_Preprocessed.csv"
+hype = pd.read_csv(url)
 hype = hype.loc[:, ~hype.columns.str.contains('^Unnamed')]
-#print(hype.info())
+
+stroke = pd.read_csv(url)
+# print(hype.info())
 # Ordinal feature encoding
 
 df = hype.copy()
@@ -33,7 +36,6 @@ Y = df['target']
 # Split the dataset into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
-
 """________Naive Bayes Algorithm________"""
 # Train the Naive Bayes classifier
 nb_classifier = GaussianNB(var_smoothing=1e-9)
@@ -44,10 +46,10 @@ nb_predictions = nb_classifier.predict(X_test)
 nb_cm = confusion_matrix(y_test, nb_predictions)
 nb_accuracy = accuracy_score(y_test, nb_predictions)
 nb_classifier_report = classification_report(y_test, nb_predictions)
-nb_classifier_report_dict = classification_report(y_test, nb_predictions,output_dict=True)
+nb_classifier_report_dict = classification_report(y_test, nb_predictions, output_dict=True)
+
 
 def plt_NB():
-
     def classifier_report():
         report_df = pd.DataFrame(nb_classifier_report_dict).transpose()
         # Display the classification report as a table using st.write()
@@ -256,6 +258,7 @@ def plt_RF():
     with col2:
         st.pyplot()
 
+
 # Compare the 5 models and select the best algorithm
 models = {
     'Naive Bayes': nb_classifier_report,
@@ -267,8 +270,8 @@ models = {
 best_model = max(models, key=models.get)
 
 # Saving the model
-pickle.dump(nb_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\kidney_disease_classifier_NB.pkl', 'wb'))
-pickle.dump(knn_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\kidney_disease_classifier_KNN.pkl', 'wb'))
-pickle.dump(dt_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\kidney_disease_classifier_DT.pkl', 'wb'))
-pickle.dump(lr_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\kidney_disease_classifier_LR.pkl', 'wb'))
-pickle.dump(rf_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\kidney_disease_classifier_RF.pkl', 'wb'))
+pickle.dump(nb_classifier, open('res/kidney_disease_classifier_NB.pkl', 'wb'))
+pickle.dump(knn_classifier, open('res/kidney_disease_classifier_KNN.pkl', 'wb'))
+pickle.dump(dt_classifier, open('res/kidney_classifier_DT.pkl', 'wb'))
+pickle.dump(lr_classifier, open('res/kidney_disease_classifier_LR.pkl', 'wb'))
+pickle.dump(rf_classifier, open('res/kidney_disease_classifier_RF.pkl', 'wb'))

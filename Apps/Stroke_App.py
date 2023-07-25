@@ -125,7 +125,8 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-        st.subheader('Decision Tree Prediction Probability')
+        st.subheader('Decision Tree Prediction Probability ')
+        st.write("(0: NO, 1: Yes)")
         st.write(prediction_proba_DT)
         cmb.plt_DT()
 

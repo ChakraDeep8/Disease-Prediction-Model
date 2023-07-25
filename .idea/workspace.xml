@@ -7,17 +7,26 @@
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Hypertension_App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_kidney.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_kidney.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/kidney_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/kidney_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/kidney_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/kidney_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_home.py" afterDir="false" />
     </list>
@@ -34,6 +43,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--follow-tags" />
@@ -76,11 +86,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Classifier_Models" />
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\images" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\.streamlit" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\pages" />
-      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
-      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction" />
     </key>
   </component>
   <component name="RunManager">
@@ -288,7 +298,39 @@
       <option name="project" value="LOCAL" />
       <updated>1690205462488</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Major Update!!&#10;1. Change in Web page UI (Make it more user friendly)&#10;2. Add Multiselector for all plots&#10;3. Changes in Classifier files&#10;4. Add Algorithms probability">
+      <option name="closed" value="true" />
+      <created>1690229274816</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1690229274816</updated>
+    </task>
+    <task id="LOCAL-00022" summary="CKD_Preprocessed file upload">
+      <option name="closed" value="true" />
+      <created>1690284715712</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1690284715712</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Kidney module added">
+      <option name="closed" value="true" />
+      <created>1690289818269</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1690289818269</updated>
+    </task>
+    <task id="LOCAL-00024" summary="med update">
+      <option name="closed" value="true" />
+      <created>1690291484074</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1690291484074</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +352,10 @@
     <MESSAGE value="implement heart disease" />
     <MESSAGE value="Web page buildup" />
     <MESSAGE value="added config.toml and some changes in Home.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added config.toml and some changes in Home.py" />
+    <MESSAGE value="Major Update!!&#10;1. Change in Web page UI (Make it more user friendly)&#10;2. Add Multiselector for all plots&#10;3. Changes in Classifier files&#10;4. Add Algorithms probability" />
+    <MESSAGE value="CKD_Preprocessed file upload" />
+    <MESSAGE value="Kidney module added" />
+    <MESSAGE value="med update" />
+    <option name="LAST_COMMIT_MESSAGE" value="med update" />
   </component>
 </project>

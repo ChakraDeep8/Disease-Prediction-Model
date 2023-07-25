@@ -265,7 +265,6 @@ models = {
     'Random Forest': rf_classifier_report
 }
 best_model = max(models, key=models.get)
-print(type(nb_classifier_report))
 
 # Saving the model
 pickle.dump(nb_classifier, open('res/heart_disease_classifier_NB.pkl', 'wb'))
