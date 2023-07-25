@@ -4,7 +4,6 @@ from multiapp import MultiApp
 from Apps import Hypertension_App, Stroke_App, Heart_Disease  # import your app modules here
 import base64
 from pathlib import Path
-from PIL import Image
 
 
 def load_bootstrap():
@@ -40,6 +39,7 @@ with col1:
     col1.empty()
 with col2:
     col2.empty()
+    st.title("Health Track")
     st.markdown("""
     # Disease Detector App
 

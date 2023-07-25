@@ -7,12 +7,9 @@ import pickle
 import numpy as np
 
 def app():
-    st.write("""
-    # Stroke Detector
 
-    This app predicts whether a person have chances for stroke or not
-
-    """)
+    st.title("Stroke Detector")
+    st.info("This app predicts whether a person have chances for stroke or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""

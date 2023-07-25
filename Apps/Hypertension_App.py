@@ -9,12 +9,9 @@ from Classifier_Models import Classifier_model_builder_hypertension as cmb
 
 
 def app():
-    st.write("""
-    # Hypertension Blood Pressure Detector
 
-    This app predicts whether a person have any hypertension blood pressure or not
-
-    """)
+    st.title("Hypertension Blood Pressure Detector")
+    st.info("This app predicts whether a person have any hypertension blood pressure or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
@@ -114,7 +111,7 @@ def app():
 
     def KNN():
         st.subheader('K-Nearest Neighbour Prediction')
-        knn_prediction = {1: 'Yes', 0: 'NO'}
+        knn_prediction = np.array([0, 1])
         if knn_prediction[prediction_KNN] == 1:
             st.write("<p style='font-size:20px;color: orange'><b>Heart Disease Detected.</b></p>",
                      unsafe_allow_html=True)

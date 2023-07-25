@@ -7,12 +7,8 @@ import numpy as np
 
 def app():
 
-    st.write("""
-    # Heart Disease Detector
-    
-    This app predicts whether a person have any heart disease or not
-
-    """)
+    st.title("Heart Disease Detector")
+    st.info("This app predicts whether a person have any heart disease or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
