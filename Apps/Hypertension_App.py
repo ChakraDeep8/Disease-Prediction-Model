@@ -100,7 +100,7 @@ def app():
 
     def NB():
         st.subheader('Naive Bayes Prediction')
-        NB_prediction = np.array([0, 1])
+        NB_prediction = np.array([0 , 1])
         if NB_prediction[prediction_NB] == 1:
             st.write("<p style='font-size:20px;color: orange'></p>", unsafe_allow_html=True)
         else:

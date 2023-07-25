@@ -1,16 +1,7 @@
 import streamlit as st
-from PIL import Image
 from multiapp import MultiApp
 from Apps import Hypertension_App, Stroke_App, Heart_Disease  # import your app modules here
-import base64
-from pathlib import Path
-
-
-def load_bootstrap():
-    return st.markdown(
-        '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">',
-        unsafe_allow_html=True)
-
+from PIL import Image
 
 app = MultiApp()
 st.set_page_config(
@@ -39,7 +30,6 @@ with col1:
     col1.empty()
 with col2:
     col2.empty()
-    st.title("Health Track")
     st.markdown("""
     # Disease Detector App
 
@@ -51,7 +41,9 @@ with col2:
 
     _The parameters could include_ `age, gender, lifestyle habits, genetic factors, and existing health conditions` _, among others._
     """)
-st.write()
+st.write("")
+st.write("")
+st.write("")
 
 # Add all your application here
 app.add_app("Heart Disease Detector", Heart_Disease.app)

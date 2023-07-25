@@ -9,7 +9,7 @@ import numpy as np
 def app():
 
     st.write("""
-    # Heart Disease Detector
+    # Kidney Disease Detector
 
     This app predicts whether a person have any heart disease or not
 
