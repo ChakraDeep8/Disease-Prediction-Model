@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-url = "https://raw.githubusercontent.com/ChakraDeep8/Hypertension_Stroke_DiseasePrediction/master/res/heart.csv"
+url = "res/heart.csv"
 heart = pd.read_csv(url)
 
 # Ordinal feature encoding

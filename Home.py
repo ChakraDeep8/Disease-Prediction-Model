@@ -21,11 +21,6 @@ st.set_page_config(
 
 )
 
-load_bootstrap()
-
-
-
-
 
 st.markdown(
     """

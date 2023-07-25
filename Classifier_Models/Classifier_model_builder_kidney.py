@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-url = "https://raw.githubusercontent.com/ChakraDeep8/Hypertension_Stroke_DiseasePrediction/master/res/CKD_Preprocessed.csv"
+url = "res/CKD_Preprocessed.csv"
 hype = pd.read_csv(url)
 hype = hype.loc[:, ~hype.columns.str.contains('^Unnamed')]
 
