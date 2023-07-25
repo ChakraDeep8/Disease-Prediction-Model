@@ -1,4 +1,4 @@
-# Hypertension_Stroke_DiseasePrediction
+# Health Track
 Concept of the Project:
 In the realm of healthcare, predicting diseases before they manifest can be a game-changer. It can lead to early interventions, better management of health conditions, and improved patient outcomes. To this end, we propose the development of a Disease Prediction Model using Machine Learning (ML) techniques. This model will analyze various health parameters of an individual and predict the likelihood of them developing a specific disease. The parameters could include age, gender, lifestyle habits, genetic factors, and existing health conditions, among others.
 

@@ -1,5 +1,5 @@
 import streamlit as st
-from multiapp import MultiApp
+from res.multiapp import MultiApp
 from Apps import Hypertension_App, Stroke_App, Heart_Disease  # import your app modules here
 from PIL import Image
 

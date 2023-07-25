@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Apps/Type2_Diabetes_App.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_diabetes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/diabetes.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/type_2_diabetes_classifier_DT.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/type_2_diabetes_classifier_KNN.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/type_2_diabetes_classifier_LR.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/type_2_diabetes_classifier_NB.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/type_2_diabetes_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Hypertension_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Kidney_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Kidney_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/res/multiapp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,9 +66,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\images" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\Classifier_Models" />
-      <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\.streamlit" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\pages" />
     </key>
@@ -337,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690303065920</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add Diabetes Model">
+      <option name="closed" value="true" />
+      <created>1690309875149</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690309875149</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +358,7 @@
     <MESSAGE value="Added Kidney.py" />
     <MESSAGE value="Kidney_app&#10;np.array({0,1})" />
     <MESSAGE value="Add logo in sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add logo in sidebar" />
+    <MESSAGE value="Add Diabetes Model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Diabetes Model" />
   </component>
 </project>
