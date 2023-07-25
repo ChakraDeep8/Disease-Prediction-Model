@@ -4,6 +4,7 @@ from multiapp import MultiApp
 from Apps import Hypertension_App, Stroke_App, Heart_Disease  # import your app modules here
 import base64
 from pathlib import Path
+from PIL import Image
 
 
 def load_bootstrap():
@@ -17,23 +18,13 @@ st.set_page_config(
     page_title="Disease Predictor App",
     page_icon=Image.open("images/medical-team.png"),
     layout="wide",
-    initial_sidebar_state="collapsed",
+
 )
 
 load_bootstrap()
 
 
-def img_to_bytes(img_path):
-    img_bytes = Path(img_path).read_bytes()
-    encoded = base64.b64encode(img_bytes).decode()
-    return encoded
 
-
-def img_to_html(img_path):
-    img_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(
-        img_to_bytes(img_path)
-    )
-    return img_html
 
 
 st.markdown(
@@ -49,7 +40,8 @@ st.markdown(
 
 col1, col2 = st.columns([1, 1], gap="small")
 with col1:
-    st.markdown(img_to_html('images/medical-team.png'), unsafe_allow_html=True)
+    image = Image.open('images\med.png')
+    st.image(image)
     col1.empty()
 with col2:
     col2.empty()

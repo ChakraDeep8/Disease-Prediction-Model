@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_kidney.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_kidney.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_KNN.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_LR.pkl" afterDir="false" />
@@ -22,13 +18,8 @@
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/kidney_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/kidney_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/kidney_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/kidney_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_KNN.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_LR.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_NB.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_home.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690291484074</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Update 3.0">
+      <option name="closed" value="true" />
+      <created>1690294229361</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1690294229361</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +355,7 @@
     <MESSAGE value="CKD_Preprocessed file upload" />
     <MESSAGE value="Kidney module added" />
     <MESSAGE value="med update" />
-    <option name="LAST_COMMIT_MESSAGE" value="med update" />
+    <MESSAGE value="Update 3.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update 3.0" />
   </component>
 </project>
