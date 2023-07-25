@@ -5,12 +5,14 @@ from PIL import Image
 
 app = MultiApp()
 st.set_page_config(
-    page_title="Disease Predictor App",
+    page_title="Health Track",
     page_icon=Image.open("images/medical-team.png"),
     layout="wide",
 
 )
 
+image = Image.open("images/Health01.png")
+st.sidebar.image(image, use_column_width=True)
 
 st.markdown(
     """
@@ -26,16 +28,16 @@ st.markdown(
 col1, col2 = st.columns([1, 1], gap="small")
 with col1:
     image = Image.open('images\med.png')
-    st.image(image)
+    st.image(image, use_column_width="auto")
     col1.empty()
 with col2:
     col2.empty()
+    st.title("Health Track")
     st.markdown("""
-    # Disease Detector App
 
-    **In the realm of healthcare, predicting diseases before they manifest can be a game-changer. 
+    **Disease Detector App** - In the realm of healthcare, predicting diseases before they manifest can be a game-changer. 
     It can lead to early interventions, better management of health conditions, and improved patient outcomes. 
-    To this end, we propose the development of a Disease Prediction Model using Machine Learning (ML) techniques.**
+    To this end, we propose the development of a Disease Prediction Model using Machine Learning (ML) techniques.
 
     This model will analyze various health parameters of an individual and predict the likelihood of them developing a specific disease.
 
