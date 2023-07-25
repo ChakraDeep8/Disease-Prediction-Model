@@ -159,33 +159,28 @@ def app():
 
     def predict_best_algorithm():
         if cmb.best_model == 'Naive Bayes':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Naive Bayes</p>", unsafe_allow_html=True)
             NB()
 
         elif cmb.best_model == 'K-Nearest Neighbors (KNN)':
-            st.write("<p style='font-size:24px;'>Best Algorithm: K-Nearest Neighbour</p>", unsafe_allow_html=True)
             KNN()
 
         elif cmb.best_model == 'Decision Tree':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Decision Tree</p>", unsafe_allow_html=True)
             DT()
 
         elif cmb.best_model == 'Logistic Regression':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Logistic Regression</p>", unsafe_allow_html=True)
             LR()
 
         elif cmb.best_model == 'Random Forest':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Random Forest</p>", unsafe_allow_html=True)
             RF()
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-
     # Displays the user input features
     with st.expander("Prediction Results"):
         # Display the input dataframe
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
         # Call the predict_best_algorithm() function
+        st.caption('Here, The best algorithm is selected among all algorithm')
         predict_best_algorithm()
 
     # Create a multiselect for all the plot options

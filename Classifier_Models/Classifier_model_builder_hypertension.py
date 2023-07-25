@@ -14,7 +14,7 @@ from sklearn.metrics import classification_report
 
 url = "res/hypertension_data.csv"
 hype = pd.read_csv(url)
-print(hype.info())
+
 # Ordinal feature encoding
 
 df = hype.copy()

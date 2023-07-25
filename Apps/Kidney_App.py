@@ -97,7 +97,7 @@ def app():
         st.subheader('Naive Bayes Prediction')
         NB_prediction = np.array([0, 1])
         if NB_prediction[prediction_NB] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You have Heart Disease.</b></p>",
+            st.write("<p style='font-size:20px;color: orange'><b>You have type2 diabetes</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -109,7 +109,7 @@ def app():
         st.subheader('K-Nearest Neighbour Prediction')
         knn_prediction = np.array([0, 1])
         if knn_prediction[prediction_KNN] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You have Heart Disease.</b></p>",
+            st.write("<p style='font-size:20px;color: orange'><b>You have Type2 Diabetes</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -121,7 +121,7 @@ def app():
         st.subheader('Decision Tree Prediction')
         DT_prediction = np.array([0, 1])
         if DT_prediction[prediction_DT] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have Heart Disease.</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Type2 Diabetes</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -133,7 +133,7 @@ def app():
         st.subheader('Logistic Regression Prediction')
         LR_prediction = np.array([0, 1])
         if LR_prediction[prediction_LR] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have Heart Disease.<b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Type2 Diabetes<b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -145,7 +145,7 @@ def app():
         st.subheader('Random Forest Prediction')
         RF_prediction = np.array([0, 1])
         if RF_prediction[prediction_RF] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have Heart Disease.</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Type2 Diabetes</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -155,33 +155,28 @@ def app():
 
     def predict_best_algorithm():
         if cmb.best_model == 'Naive Bayes':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Naive Bayes</p>", unsafe_allow_html=True)
             NB()
 
         elif cmb.best_model == 'K-Nearest Neighbors (KNN)':
-            st.write("<p style='font-size:24px;'>Best Algorithm: K-Nearest Neighbour</p>", unsafe_allow_html=True)
             KNN()
 
         elif cmb.best_model == 'Decision Tree':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Decision Tree</p>", unsafe_allow_html=True)
             DT()
 
         elif cmb.best_model == 'Logistic Regression':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Logistic Regression</p>", unsafe_allow_html=True)
             LR()
 
         elif cmb.best_model == 'Random Forest':
-            st.write("<p style='font-size:24px;'>Best Algorithm: Random Forest</p>", unsafe_allow_html=True)
             RF()
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-
     # Displays the user input features
     with st.expander("Prediction Results"):
         # Display the input dataframe
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
         # Call the predict_best_algorithm() function
+        st.caption('Here, The best algorithm is selected among all algorithm')
         predict_best_algorithm()
 
     # Create a multiselect for all the plot options
