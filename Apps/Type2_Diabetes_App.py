@@ -7,8 +7,8 @@ import numpy as np
 
 
 def app():
-    st.title("Type2 Diabetes Detector")
-    st.info("This app predicts whether a person have any type2 diabetes or not")
+    st.title("Heart Disease Detector")
+    st.info("This app predicts whether a person have any Heart Disease or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
@@ -91,7 +91,7 @@ def app():
         st.subheader('Naive Bayes Prediction')
         NB_prediction = np.array([0, 1])
         if NB_prediction[prediction_NB] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You have Type2 Diabetes</b></p>",
+            st.write("<p style='font-size:20px;color: orange'><b>You have heart disease</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -103,7 +103,7 @@ def app():
         st.subheader('K-Nearest Neighbour Prediction')
         knn_prediction = np.array([0, 1])
         if knn_prediction[prediction_KNN] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You have Type2 Diabetes</b></p>",
+            st.write("<p style='font-size:20px;color: orange'><b>You have heart disease</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -115,7 +115,7 @@ def app():
         st.subheader('Decision Tree Prediction')
         DT_prediction = np.array([0, 1])
         if DT_prediction[prediction_DT] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have Type2 Diabetes</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have heart disease</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -127,7 +127,7 @@ def app():
         st.subheader('Logistic Regression Prediction')
         LR_prediction = np.array([0, 1])
         if LR_prediction[prediction_LR] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have Type2 Diabetes<b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have heart disease<b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
@@ -139,7 +139,7 @@ def app():
         st.subheader('Random Forest Prediction')
         RF_prediction = np.array([0, 1])
         if RF_prediction[prediction_RF] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have Type2 Diabetes</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have heart disease</b></p>",
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)

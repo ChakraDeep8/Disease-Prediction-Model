@@ -1,9 +1,5 @@
 # config.toml
 
-[server]
-headless = true
-enableCORS = false
-port = 8501
 
 [theme]
 primaryColor="#f11a7b"
