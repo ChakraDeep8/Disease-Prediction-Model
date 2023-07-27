@@ -7,7 +7,6 @@ import numpy as np
 
 
 def app():
-
     st.write("""
     # Kidney Disease Detector
 
@@ -25,20 +24,35 @@ def app():
         input_df = pd.read_csv(uploaded_file)
     else:
         def patient_details():
-            sex = st.sidebar.selectbox('Sex', ('M', 'F'))
-            ChestPainType = st.sidebar.selectbox('Chest Pain Type', ('TA', 'ASY', 'NAP'))
-            RestingECG = st.sidebar.selectbox('Resting Electrocardiogram', ('Normal', 'ST', 'LVH'))
-            ExerciseAngina = st.sidebar.selectbox('ExerciseAngina', ('Y', 'N'))
-            ST_Slope = st.sidebar.selectbox('ST Slope', ('Up', 'Flat', 'Down'))
-            Age = st.sidebar.slider('Age', 28, 77)
+            Age = st.sidebar.slider('Age', 2, 90)
+            Bp = st.sidebar.slider('Blood Pressure', 2, 90)
+
+
+
+            rbc = st.sidebar.selectbox('Red Blood Corpulence', ('normal', 'abnormal'))
+            pc = st.sidebar.selectbox('pc', ('normal', 'abnormal'))
+            pcc = st.sidebar.selectbox('pcc', ('present', 'notpresent'))
+            ba = st.sidebar.selectbox('bc', ('present', 'notpresent'))
+            htn = st.sidebar.selectbox('htn', ('yes', 'no'))
+            dm = st.sidebar.selectbox('dm', ('yes', 'no'))
+            cad = st.sidebar.selectbox('cad', ('yes', 'no'))
+            appet = st.sidebar.selectbox('appet', ('poor', 'good'))
+            pe = st.sidebar.selectbox('pe', ('yes', 'no'))
+            ane = st.sidebar.selectbox('ane', ('yes', 'no'))
+
+
+
+
+
             RestingBP = st.sidebar.slider('Resting Blood Pressure', 0, 200)
             Cholesterol = st.sidebar.slider('Cholesterol', 0, 603)
             MaxHR = st.sidebar.slider('Maximum Heart Rate', 60, 202)
             Oldpeak = st.sidebar.slider('Old peak', -2, 6)
             FastingBS = st.sidebar.slider('Fasting Blood Sugar', 0, 1)
 
-            data = {'Age': Age,
-                    'Sex': sex,
+            data = {'age': Age,
+                    'rbc': rbc,
+                    'pc': pc,
                     'ChestPainType': ChestPainType,
                     'RestingBP': RestingBP,
                     'Cholesterol': Cholesterol,
@@ -54,9 +68,11 @@ def app():
 
         input_df = patient_details()
 
-    heart_disease_raw = pd.read_csv('res/heart.csv')
-    heart = heart_disease_raw.drop(columns=['HeartDisease'])
-    df = pd.concat([input_df, heart], axis=0)
+    url = "res/CKD_Preprocessed.csv"
+    kidney_disease_raw = pd.read_csv(url)
+    kidney_disease_raw = kidney_disease_raw.loc[:, ~kidney_disease_raw.columns.str.contains('^Unnamed')]
+    kidney = kidney_disease_raw.drop(columns=['target'])
+    df = pd.concat([input_df, kidney], axis=0)
 
     # Encoding of ordinal features
     encode = ['Sex', 'ChestPainType', 'RestingECG', 'ExerciseAngina', 'ST_Slope']
@@ -75,11 +91,11 @@ def app():
         st.write(df)
 
     # Load the classification models
-    load_clf_NB = pickle.load(open('res/heart_disease_classifier_NB.pkl', 'rb'))
-    load_clf_KNN = pickle.load(open('res/heart_disease_classifier_KNN.pkl', 'rb'))
-    load_clf_DT = pickle.load(open('res/heart_disease_classifier_DT.pkl', 'rb'))
-    load_clf_LR = pickle.load(open('res/heart_disease_classifier_LR.pkl', 'rb'))
-    load_clf_RF = pickle.load(open('res/heart_disease_classifier_RF.pkl', 'rb'))
+    load_clf_NB = pickle.load(open('res/kidney_disease_classifier_NB.pkl', 'rb'))
+    load_clf_KNN = pickle.load(open('res/kidney_disease_classifier_KNN.pkl', 'rb'))
+    load_clf_DT = pickle.load(open('res/kidney_disease_classifier_DT.pkl', 'rb'))
+    load_clf_LR = pickle.load(open('res/kidney_disease_classifier_LR.pkl', 'rb'))
+    load_clf_RF = pickle.load(open('res/kidney_disease_classifier_RF.pkl', 'rb'))
 
     # Apply models to make predictions
     prediction_NB = load_clf_NB.predict(df)
@@ -170,6 +186,7 @@ def app():
             RF()
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+
     # Displays the user input features
     with st.expander("Prediction Results"):
         # Display the input dataframe

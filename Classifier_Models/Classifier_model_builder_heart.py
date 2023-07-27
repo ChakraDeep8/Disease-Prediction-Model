@@ -267,9 +267,9 @@ models = {
 best_model = max(models, key=models.get)
 
 # Saving the model
-pickle.dump(nb_classifier, open('res/heart_disease_classifier_NB.pkl', 'wb'))
-pickle.dump(knn_classifier, open('res/heart_disease_classifier_KNN.pkl', 'wb'))
-pickle.dump(dt_classifier, open('res/heart_disease_classifier_DT.pkl', 'wb'))
-pickle.dump(lr_classifier, open('res/heart_disease_classifier_LR.pkl', 'wb'))
-pickle.dump(rf_classifier, open('res/heart_disease_classifier_RF.pkl', 'wb'))
+pickle.dump(nb_classifier, open('res/kidney_disease_classifier_NB.pkl', 'wb'))
+pickle.dump(knn_classifier, open('res/kidney_disease_classifier_KNN.pkl', 'wb'))
+pickle.dump(dt_classifier, open('res/kidney_disease_classifier_DT.pkl', 'wb'))
+pickle.dump(lr_classifier, open('res/kidney_disease_classifier_LR.pkl', 'wb'))
+pickle.dump(rf_classifier, open('res/kidney_disease_classifier_RF.pkl', 'wb'))
 

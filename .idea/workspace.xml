@@ -7,17 +7,13 @@
     <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/Shapash/Shapash_Heart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.streamlit/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.streamlit/config.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Apps/Kidney_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Kidney_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Type2_Diabetes_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Type2_Diabetes_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_DT.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/heart_disease_classifier_RF.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_DT.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/hypertension_disease_classifier_RF.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_DT.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/stroke_disease_classifier_RF.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -397,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690317701347</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Resolve Heart Disease Issue">
+      <option name="closed" value="true" />
+      <created>1690386873571</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1690386873571</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +410,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="First" />
     <MESSAGE value="KNN_pickle" />
     <MESSAGE value="stroke_knn_pickle" />
     <MESSAGE value="Second update" />
@@ -431,6 +434,7 @@
     <MESSAGE value="panda" />
     <MESSAGE value="med image" />
     <MESSAGE value="med imd" />
-    <option name="LAST_COMMIT_MESSAGE" value="med imd" />
+    <MESSAGE value="Resolve Heart Disease Issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve Heart Disease Issue" />
   </component>
 </project>
