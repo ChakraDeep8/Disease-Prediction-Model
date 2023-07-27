@@ -50,7 +50,7 @@ def app():
 
         input_df = patient_details()
 
-    heart_disease_raw = pd.read_csv('res/heart.csv')
+    heart_disease_raw = pd.read_csv('res/heart_data.csv')
     heart = heart_disease_raw.drop(columns=['HeartDisease'])
     df = pd.concat([input_df, heart], axis=0)
 
@@ -145,9 +145,22 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+
         st.subheader('Random Forest Probability')
         st.write(prediction_proba_RF)
         cmb.plt_RF()
+
+    from streamlit_toggle import st_toggle_switch
+    st.write("## Toggle Switch")
+    st_toggle_switch(
+        label="Enable Setting?",
+        key="switch_1",
+        default_value=False,
+        label_after=False,
+        inactive_color="#D3D3D3",  # optional
+        active_color="#11567f",  # optional
+        track_color="#29B5E8",  # optional
+    )
 
     def predict_best_algorithm():
         if cmb.best_model == 'Naive Bayes':
@@ -172,7 +185,7 @@ def app():
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
         # Call the predict_best_algorithm() function
-        st.caption('Here, The best algorithm is selected among all algorithm')
+        st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
 
     # Create a multiselect for all the plot options

@@ -180,7 +180,7 @@ def app():
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
         # Call the predict_best_algorithm() function
-        st.caption('Here, The best algorithm is selected among all algorithm')
+        st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
 
     # Create a multiselect for all the plot options

@@ -59,7 +59,7 @@ def plt_NB():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Blues)
+    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - Naive Bayes')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -75,10 +75,13 @@ def plt_NB():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-    with col1:
+with col1:
+        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
+        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
+
 
 
 """________KNN Algorithm________"""
@@ -102,7 +105,7 @@ def plt_KNN():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Blues)
+    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - KNN')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -118,10 +121,13 @@ def plt_KNN():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-    with col1:
+with col1:
+        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
+        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
+
 
 
 """________Decision Tree________"""
@@ -147,7 +153,7 @@ def plt_DT():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Blues)
+    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - Decision Tree')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -163,10 +169,13 @@ def plt_DT():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-    with col1:
+with col1:
+        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
+        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
+
 
 
 """________Logistic Regression Algorithm________"""
@@ -192,7 +201,7 @@ def plt_LR():
 
     # Plot confusion matrix for classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Blues)
+    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - Logistic Regression')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -208,10 +217,13 @@ def plt_LR():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-    with col1:
+with col1:
+        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
+        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
+
 
 
 """________Random Forest Algorithm________"""
@@ -237,7 +249,7 @@ def plt_RF():
 
     # Plot confusion matrix for  classifier
     plt.figure()
-    plt.imshow(rf_cm, interpolation='nearest', cmap=plt.cm.Blues)
+    plt.imshow(rf_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - Random Forest')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -253,10 +265,13 @@ def plt_RF():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-    with col1:
+with col1:
+        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
+        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
+
 
 
 # Compare the 5 models and select the best algorithm
