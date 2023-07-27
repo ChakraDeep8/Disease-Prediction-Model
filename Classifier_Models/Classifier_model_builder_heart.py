@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-url = "res/heart_data.csv"
+url = "res/heart.csv"
 heart = pd.read_csv(url)
 
 # Ordinal feature encoding

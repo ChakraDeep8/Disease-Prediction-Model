@@ -50,7 +50,7 @@ def app():
 
         input_df = patient_details()
 
-    heart_disease_raw = pd.read_csv('res/heart_data.csv')
+    heart_disease_raw = pd.read_csv('res/heart.csv')
     heart = heart_disease_raw.drop(columns=['HeartDisease'])
     df = pd.concat([input_df, heart], axis=0)
 

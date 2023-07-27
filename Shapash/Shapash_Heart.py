@@ -3,7 +3,7 @@ from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-url = "C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\heart_data.csv"
+url = "C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\heart.csv"
 heart = pd.read_csv(url)
 
 # Ordinal feature encoding
