@@ -9,6 +9,9 @@ import numpy as np
 def app():
     st.title("Diabetes Detector")
     st.info("This app predicts whether a person have any diabetes or not")
+    st.markdown("""
+    **Disclaimer** - :red[This Prediction Model is only applicable for Females.]
+    """)
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
