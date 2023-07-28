@@ -49,6 +49,7 @@ st.write("")
 st.write("")
 colored_header(
     label="Select your disease",
+    description="",
     color_name="violet-70",
 )
 # Add all your application here
