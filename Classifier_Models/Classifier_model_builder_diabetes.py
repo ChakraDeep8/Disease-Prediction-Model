@@ -1,6 +1,5 @@
 import numpy as np
 import streamlit as st
-from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 import pandas as pd
@@ -13,7 +12,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
 # Importing dataset
-url = "../res/diabetes.csv"
+url = "res/diabetes.csv"
 dataset = pd.read_csv(url)
 
 col = dataset.columns[:8]
@@ -21,24 +20,26 @@ col = dataset.columns[:8]
 dataset_new = dataset
 
 # Replacing zero values with NaN
-dataset_new[["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]] = dataset_new[["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]].replace(0, np.NaN)
+dataset_new[["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]] = dataset_new[
+    ["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]].replace(0, np.NaN)
 
 # Count of NaN
 dataset_new.isnull().sum()
 
 # Replacing NaN with mean values
-dataset_new["Glucose"].fillna(dataset_new["Glucose"].mean(), inplace = True)
-dataset_new["BloodPressure"].fillna(dataset_new["BloodPressure"].mean(), inplace = True)
-dataset_new["SkinThickness"].fillna(dataset_new["SkinThickness"].mean(), inplace = True)
-dataset_new["Insulin"].fillna(dataset_new["Insulin"].mean(), inplace = True)
-dataset_new["BMI"].fillna(dataset_new["BMI"].mean(), inplace = True)
+dataset_new["Glucose"].fillna(dataset_new["Glucose"].mean(), inplace=True)
+dataset_new["BloodPressure"].fillna(dataset_new["BloodPressure"].mean(), inplace=True)
+dataset_new["SkinThickness"].fillna(dataset_new["SkinThickness"].mean(), inplace=True)
+dataset_new["Insulin"].fillna(dataset_new["Insulin"].mean(), inplace=True)
+dataset_new["BMI"].fillna(dataset_new["BMI"].mean(), inplace=True)
 
 # Statistical summary
 dataset_new.describe()
 
 # Feature scaling using MinMaxScaler
 from sklearn.preprocessing import MinMaxScaler
-sc = MinMaxScaler(feature_range = (0, 1))
+
+sc = MinMaxScaler(feature_range=(0, 1))
 dataset_scaled = sc.fit_transform(dataset_new)
 
 dataset_scaled = pd.DataFrame(dataset_scaled)
@@ -49,7 +50,9 @@ Y = dataset_scaled.iloc[:, 8].values
 
 # Splitting X and Y
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.20, random_state = 42, stratify = dataset_new['Outcome'] )
+
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, random_state=42,
+                                                    stratify=dataset_new['Outcome'])
 
 """________Naive Bayes Algorithm________"""
 # Train the Naive Bayes classifier
@@ -65,7 +68,6 @@ nb_classifier_report_dict = classification_report(y_test, nb_predictions, output
 
 
 def plt_NB():
-
     def classifier_report():
         report_df = pd.DataFrame(nb_classifier_report_dict).transpose()
         # Display the classification report as a table using st.write()
@@ -92,12 +94,13 @@ def plt_NB():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+        st.text('Why Classifier Report',
+                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        st.text('How to read',
+                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
-
 
 
 """________KNN Algorithm________"""
@@ -138,12 +141,13 @@ def plt_KNN():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+        st.text('Why Classifier Report',
+                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        st.text('How to read',
+                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
-
 
 
 """________Decision Tree________"""
@@ -186,12 +190,13 @@ def plt_DT():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+        st.text('Why Classifier Report',
+                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        st.text('How to read',
+                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
-
 
 
 """________Logistic Regression Algorithm________"""
@@ -234,12 +239,13 @@ def plt_LR():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+        st.text('Why Classifier Report',
+                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        st.text('How to read',
+                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
-
 
 
 """________Random Forest Algorithm________"""
@@ -282,12 +288,13 @@ def plt_RF():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+        st.text('Why Classifier Report',
+                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        st.text('How to read',
+                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
-
 
 
 # Selecting the best suitable algorithm based on classifier_report
