@@ -71,11 +71,11 @@ def app():
         st.write(df)
 
     # Load the classification models
-    load_clf_NB = pickle.load(open('res/kidney_disease_classifier_NB.pkl', 'rb'))
-    load_clf_KNN = pickle.load(open('res/kidney_disease_classifier_KNN.pkl', 'rb'))
-    load_clf_DT = pickle.load(open('res/kidney_disease_classifier_DT.pkl', 'rb'))
-    load_clf_LR = pickle.load(open('res/kidney_disease_classifier_LR.pkl', 'rb'))
-    load_clf_RF = pickle.load(open('res/kidney_disease_classifier_RF.pkl', 'rb'))
+    load_clf_NB = pickle.load(open('res/heart_disease_classifier_NB.pkl', 'rb'))
+    load_clf_KNN = pickle.load(open('res/heart_disease_classifier_KNN.pkl', 'rb'))
+    load_clf_DT = pickle.load(open('res/heart_disease_classifier_DT.pkl', 'rb'))
+    load_clf_LR = pickle.load(open('res/heart_disease_classifier_LR.pkl', 'rb'))
+    load_clf_RF = pickle.load(open('res/heart_disease_classifier_RF.pkl', 'rb'))
 
     # Apply models to make predictions
     prediction_NB = load_clf_NB.predict(df)
