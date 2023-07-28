@@ -12,9 +12,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-url = "C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\diabetes.csv"
-
 # Importing dataset
+url = "../res/diabetes.csv"
 dataset = pd.read_csv(url)
 
 col = dataset.columns[:8]
@@ -92,7 +91,7 @@ def plt_NB():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-with col1:
+    with col1:
         st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
@@ -138,7 +137,7 @@ def plt_KNN():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-with col1:
+    with col1:
         st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
@@ -186,7 +185,7 @@ def plt_DT():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-with col1:
+    with col1:
         st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
@@ -234,7 +233,7 @@ def plt_LR():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-with col1:
+    with col1:
         st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
@@ -282,7 +281,7 @@ def plt_RF():
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
-with col1:
+    with col1:
         st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
@@ -302,8 +301,8 @@ models = {
 best_model = max(models, key=models.get)
 
 # Saving the model
-pickle.dump(nb_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\type_2_diabetes_classifier_NB.pkl', 'wb'))
-pickle.dump(knn_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\type_2_diabetes_classifier_KNN.pkl', 'wb'))
-pickle.dump(dt_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\type_2_diabetes_classifier_DT.pkl', 'wb'))
-pickle.dump(lr_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\type_2_diabetes_classifier_LR.pkl', 'wb'))
-pickle.dump(rf_classifier, open('C:\\Users\\deep\\PycharmProjects\\DiseasePrediction\\res\\type_2_diabetes_classifier_RF.pkl', 'wb'))
+pickle.dump(nb_classifier, open('../res/type_2_diabetes_classifier_NB.pkl', 'wb'))
+pickle.dump(knn_classifier, open('../res/type_2_diabetes_classifier_KNN.pkl', 'wb'))
+pickle.dump(dt_classifier, open('../res/type_2_diabetes_classifier_DT.pkl', 'wb'))
+pickle.dump(lr_classifier, open('../res/type_2_diabetes_classifier_LR.pkl', 'wb'))
+pickle.dump(rf_classifier, open('../res/type_2_diabetes_classifier_RF.pkl', 'wb'))
