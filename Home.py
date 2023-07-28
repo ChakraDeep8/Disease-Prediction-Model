@@ -2,7 +2,14 @@ import streamlit as st
 from res.multiapp import MultiApp
 from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes, Breast_Cancer  # import your app modules here
 from PIL import Image
+import json
 from res import Header as hd
+from streamlit_lottie import  st_lottie
+def load_lottiefile(filepath: str):
+    with open(filepath, "r") as f:
+        return json.load(f)
+
+lottie_coding = load_lottiefile("res/Logo_animation.json")
 
 app = MultiApp()
 st.set_page_config(
@@ -28,8 +35,17 @@ st.markdown(
 
 col1, col2 = st.columns([1, 1], gap="small")
 with col1:
-    image = Image.open('images/med.png')
-    st.image(image, use_column_width="auto")
+    st_lottie(
+        lottie_coding,
+        speed=1,
+        reverse=False,
+        loop=True,
+        quality="medium",
+        height=None,
+        width=None,
+        key=None,
+    )
+
     col1.empty()
 with col2:
     col2.empty()
