@@ -12,44 +12,19 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-# Importing dataset
-url = "../res/diabetes.csv"
-dataset = pd.read_csv(url)
+url = "res/diabetes.csv"
+dia = pd.read_csv(url)
 
-col = dataset.columns[:8]
+# Ordinal feature encoding
+df = dia.copy()
 
-dataset_new = dataset
+# Separating X and y
+X = df.drop('Outcome', axis=1)
+Y = df['Outcome']
 
-# Replacing zero values with NaN
-dataset_new[["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]] = dataset_new[["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]].replace(0, np.NaN)
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
-# Count of NaN
-dataset_new.isnull().sum()
-
-# Replacing NaN with mean values
-dataset_new["Glucose"].fillna(dataset_new["Glucose"].mean(), inplace = True)
-dataset_new["BloodPressure"].fillna(dataset_new["BloodPressure"].mean(), inplace = True)
-dataset_new["SkinThickness"].fillna(dataset_new["SkinThickness"].mean(), inplace = True)
-dataset_new["Insulin"].fillna(dataset_new["Insulin"].mean(), inplace = True)
-dataset_new["BMI"].fillna(dataset_new["BMI"].mean(), inplace = True)
-
-# Statistical summary
-dataset_new.describe()
-
-# Feature scaling using MinMaxScaler
-from sklearn.preprocessing import MinMaxScaler
-sc = MinMaxScaler(feature_range = (0, 1))
-dataset_scaled = sc.fit_transform(dataset_new)
-
-dataset_scaled = pd.DataFrame(dataset_scaled)
-
-# Selecting features - [Glucose, Insulin, BMI, Age]
-X = dataset_scaled.iloc[:, [1, 4, 5, 7]].values
-Y = dataset_scaled.iloc[:, 8].values
-
-# Splitting X and Y
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size = 0.20, random_state = 42, stratify = dataset_new['Outcome'] )
 
 """________Naive Bayes Algorithm________"""
 # Train the Naive Bayes classifier
@@ -61,8 +36,7 @@ nb_predictions = nb_classifier.predict(X_test)
 nb_cm = confusion_matrix(y_test, nb_predictions)
 nb_accuracy = accuracy_score(y_test, nb_predictions)
 nb_classifier_report = classification_report(y_test, nb_predictions)
-nb_classifier_report_dict = classification_report(y_test, nb_predictions, output_dict=True)
-
+nb_classifier_report_dict = classification_report(y_test, nb_predictions,output_dict=True)
 
 def plt_NB():
 
@@ -92,10 +66,8 @@ def plt_NB():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -138,10 +110,8 @@ def plt_KNN():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -186,10 +156,8 @@ def plt_DT():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -234,10 +202,8 @@ def plt_LR():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -282,15 +248,12 @@ def plt_RF():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
-
-# Selecting the best suitable algorithm based on classifier_report
+# Compare the 5 models and select the best algorithm
 models = {
     'Naive Bayes': nb_classifier_report,
     'K-Nearest Neighbors (KNN)': knn_classifier_report,
@@ -301,8 +264,8 @@ models = {
 best_model = max(models, key=models.get)
 
 # Saving the model
-pickle.dump(nb_classifier, open('../res/type_2_diabetes_classifier_NB.pkl', 'wb'))
-pickle.dump(knn_classifier, open('../res/type_2_diabetes_classifier_KNN.pkl', 'wb'))
-pickle.dump(dt_classifier, open('../res/type_2_diabetes_classifier_DT.pkl', 'wb'))
-pickle.dump(lr_classifier, open('../res/type_2_diabetes_classifier_LR.pkl', 'wb'))
-pickle.dump(rf_classifier, open('../res/type_2_diabetes_classifier_RF.pkl', 'wb'))
+pickle.dump(nb_classifier, open('res/diabetes_disease_classifier_NB.pkl', 'wb'))
+pickle.dump(knn_classifier, open('res/diabetes_disease_classifier_KNN.pkl', 'wb'))
+pickle.dump(dt_classifier, open('res/diabetes_disease_classifier_DT.pkl', 'wb'))
+pickle.dump(lr_classifier, open('res/diabetes_disease_classifier_LR.pkl', 'wb'))
+pickle.dump(rf_classifier, open('res/diabetes_disease_classifier_RF.pkl', 'wb'))

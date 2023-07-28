@@ -7,8 +7,8 @@ import numpy as np
 
 
 def app():
-    st.title("Type-2 Diabetes Detector")
-    st.info("This app predicts whether a person have any type-2 diabetes or not")
+    st.title("Diabetes Detector")
+    st.info("This app predicts whether a person have any diabetes or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
@@ -25,7 +25,7 @@ def app():
             BloodPressure = st.sidebar.slider('BloodPressure', 0, 122)
             SkinThickness = st.sidebar.slider('SkinThickness', 0, 99)
             Insulin = st.sidebar.slider('Insulin', 0, 846)
-            BMI = st.sidebar.slider('BMI', 0, 67.1, step=0.1)
+            BMI = st.sidebar.slider('BMI', 0.0, 67.1, step=0.1)
             DiabetesPedigreeFunction = st.sidebar.slider('DiabetesPedigreeFunction', 0.08, 2.42, step=0.01)
             Age = st.sidebar.slider('Age', 21, 81)
 
@@ -55,12 +55,11 @@ def app():
         st.write(df)
 
     # Load the classification models
-    load_clf_NB = pickle.load(open('res/type_2_diabetes_classifier_NB.pkl', 'rb'))
-    load_clf_KNN = pickle.load(open('res/type_2_diabetes_classifier_KNN.pkl', 'rb'))
-    load_clf_DT = pickle.load(open('res/type_2_diabetes_classifier_DT.pkl', 'rb'))
-    load_clf_LR = pickle.load(open('res/type_2_diabetes_classifier_LR.pkl', 'rb'))
-    load_clf_RF = pickle.load(open('res/type_2_diabetes_classifier_RF.pkl', 'rb'))
-
+    load_clf_NB = pickle.load(open('res/diabetes_disease_classifier_NB.pkl', 'rb'))
+    load_clf_KNN = pickle.load(open('res/diabetes_disease_classifier_KNN.pkl', 'rb'))
+    load_clf_DT = pickle.load(open('res/diabetes_disease_classifier_DT.pkl', 'rb'))
+    load_clf_LR = pickle.load(open('res/diabetes_disease_classifier_LR.pkl', 'rb'))
+    load_clf_RF = pickle.load(open('res/diabetes_disease_classifier_RF.pkl', 'rb'))
     # Apply models to make predictions
     prediction_NB = load_clf_NB.predict(df)
     prediction_proba_NB = load_clf_NB.predict_proba(df)
@@ -167,6 +166,13 @@ def app():
                                      "Random Forest"])
 
     # Check the selected plots and call the corresponding plot functions
+    col1, col2 = st.columns(2)
+    with col1:
+        st.text('Why Classifier Report',
+                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+    with col2:
+        st.text('How to read',
+                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
 
     placeholder = st.empty()
 
