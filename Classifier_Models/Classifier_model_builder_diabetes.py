@@ -36,7 +36,9 @@ nb_predictions = nb_classifier.predict(X_test)
 nb_cm = confusion_matrix(y_test, nb_predictions)
 nb_accuracy = accuracy_score(y_test, nb_predictions)
 nb_classifier_report = classification_report(y_test, nb_predictions)
-nb_classifier_report_dict = classification_report(y_test, nb_predictions,output_dict=True)
+nb_classifier_report_dict = classification_report(y_test, nb_predictions, output_dict=True)
+
+
 
 def plt_NB():
 

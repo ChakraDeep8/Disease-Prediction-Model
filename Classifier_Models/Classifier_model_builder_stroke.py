@@ -44,7 +44,9 @@ nb_predictions = nb_classifier.predict(X_test)
 nb_cm = confusion_matrix(y_test, nb_predictions)
 nb_accuracy = accuracy_score(y_test, nb_predictions)
 nb_classifier_report = classification_report(y_test, nb_predictions)
-nb_classifier_report_dict = classification_report(y_test, nb_predictions,output_dict=True)
+nb_classifier_report_dict = classification_report(y_test, nb_predictions, output_dict=True)
+
+
 
 def plt_NB():
 
@@ -74,10 +76,8 @@ def plt_NB():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -120,10 +120,8 @@ def plt_KNN():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -168,10 +166,8 @@ def plt_DT():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -216,10 +212,8 @@ def plt_LR():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
 
 
@@ -264,11 +258,10 @@ def plt_RF():
     st.set_option('deprecation.showPyplotGlobalUse', False)
     col1, col2 = st.columns(2)
     with col1:
-        st.text('Why Classifier Report', help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
         classifier_report()
     with col2:
-        st.text('How to read', help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
         st.pyplot()
+
 
 
 # Selecting the best suitable algorithm based on classifier_report
