@@ -7,8 +7,8 @@ import numpy as np
 
 
 def app():
-    st.title("Type2 Diabetes Detector")
-    st.info("This app predicts whether a person have any heart disease or not")
+    st.title("Type-2 Diabetes Detector")
+    st.info("This app predicts whether a person have any type-2 diabetes or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
@@ -20,29 +20,23 @@ def app():
         input_df = pd.read_csv(uploaded_file)
     else:
         def patient_details():
-            sex = st.sidebar.selectbox('Sex', ('M', 'F'))
-            ChestPainType = st.sidebar.selectbox('Chest Pain Type', ('TA', 'ASY', 'NAP'))
-            RestingECG = st.sidebar.selectbox('Resting Electrocardiogram', ('Normal', 'ST', 'LVH'))
-            ExerciseAngina = st.sidebar.selectbox('ExerciseAngina', ('Y', 'N'))
-            ST_Slope = st.sidebar.selectbox('ST Slope', ('Up', 'Flat', 'Down'))
-            Age = st.sidebar.slider('Age', 28, 77)
-            RestingBP = st.sidebar.slider('Resting Blood Pressure', 0, 200)
-            Cholesterol = st.sidebar.slider('Cholesterol', 0, 603)
-            MaxHR = st.sidebar.slider('Maximum Heart Rate', 60, 202)
-            Oldpeak = st.sidebar.slider('Old peak', -2, 6)
-            FastingBS = st.sidebar.slider('Fasting Blood Sugar', 0, 1)
+            Pregnancies = st.sidebar.slider('Pregnancies', 0, 17)
+            Glucose = st.sidebar.slider('Glucose', 0, 199)
+            BloodPressure = st.sidebar.slider('BloodPressure', 0, 122)
+            SkinThickness = st.sidebar.slider('SkinThickness', 0, 99)
+            Insulin = st.sidebar.slider('Insulin', 0, 846)
+            BMI = st.sidebar.slider('BMI', 0, 67.1, step=0.1)
+            DiabetesPedigreeFunction = st.sidebar.slider('DiabetesPedigreeFunction', 0.08, 2.42, step=0.01)
+            Age = st.sidebar.slider('Age', 21, 81)
 
-            data = {'Age': Age,
-                    'Sex': sex,
-                    'ChestPainType': ChestPainType,
-                    'RestingBP': RestingBP,
-                    'Cholesterol': Cholesterol,
-                    'FastingBS': FastingBS,
-                    'RestingECG': RestingECG,
-                    'MaxHR': MaxHR,
-                    'ExerciseAngina': ExerciseAngina,
-                    'Oldpeak': Oldpeak,
-                    'ST_Slope': ST_Slope, }
+            data = {'Pregnancies': Pregnancies,
+                    'Glucose': Glucose,
+                    'BloodPressure': BloodPressure,
+                    'SkinThickness': SkinThickness,
+                    'Insulin': Insulin,
+                    'BMI': BMI,
+                    'DiabetesPedigreeFunction': DiabetesPedigreeFunction,
+                    'Age': Age, }
 
             features = pd.DataFrame(data, index=[0])
             return features
