@@ -1,7 +1,7 @@
 import time
 import streamlit as st
 import pandas as pd
-from Classifier_Models import Classifier_model_builder_diabetes as cmb
+import Classifier_Models.Classifier_model_builder_diabetes as cmb
 import pickle
 import numpy as np
 
