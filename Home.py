@@ -1,6 +1,6 @@
 import streamlit as st
 from res.multiapp import MultiApp
-from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes  # import your app modules here
+from Apps import Hypertension_App, Stroke_App, Heart_Disease # import your app modules here
 from PIL import Image
 from streamlit_extras.colored_header import colored_header
 
@@ -55,6 +55,6 @@ colored_header(
 app.add_app("Heart Disease Detector", Heart_Disease.app)
 app.add_app("Hypertension Detector", Hypertension_App.app)
 app.add_app("Stroke Detector", Stroke_App.app)
-app.add_app("Diabetes Detector", Diabetes.app)
+
 # The main app
 app.run()
