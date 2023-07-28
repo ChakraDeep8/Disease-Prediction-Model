@@ -42,7 +42,7 @@ class MultiApp:
     def run(self):
         # app = st.sidebar.radio(
         app = st.selectbox(
-            'Select your Disease',
+            'Select your Disease👇',
             self.apps,
             format_func=lambda app: app['title'])
 
