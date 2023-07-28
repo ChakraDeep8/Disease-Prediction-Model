@@ -284,16 +284,19 @@ def app():
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("Select plots to display",
                                     ["Naive Bayes", "K-Nearest Neighbors", "Decision Tree", "Logistic Regression",
-                                     "Random Forest"])
-
+                                     "Random Forest"], default=[],key="ms_B")
+    if "ms_B" not in st.session_state:
+        st.session_state.selected_plots = []
     # Check the selected plots and call the corresponding plot functions
-    col1, col2 = st.columns(2)
-    with col1:
-        st.text('Why Classifier Report',
-                help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
-    with col2:
-        st.text('How to read',
-                help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+    if selected_plots:
+        col1, col2 = st.columns(2)
+        with col1:
+            st.text('Why Classifier Report',
+                    help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+        with col2:
+            st.text('How to read',
+                    help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+
 
     placeholder = st.empty()
 
