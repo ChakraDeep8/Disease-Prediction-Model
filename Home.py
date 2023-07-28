@@ -2,6 +2,7 @@ import streamlit as st
 from res.multiapp import MultiApp
 from Apps import Hypertension_App, Stroke_App, Heart_Disease  # import your app modules here
 from PIL import Image
+from streamlit_extras.colored_header import colored_header
 
 app = MultiApp()
 st.set_page_config(
@@ -46,7 +47,10 @@ with col2:
 st.write("")
 st.write("")
 st.write("")
-
+colored_header(
+    label="Select your disease",
+    color_name="violet-70",
+)
 # Add all your application here
 app.add_app("Heart Disease Detector", Heart_Disease.app)
 app.add_app("Hypertension Detector", Hypertension_App.app)
