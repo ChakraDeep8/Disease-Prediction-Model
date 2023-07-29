@@ -4,6 +4,7 @@ import pandas as pd
 from Classifier_Models import Classifier_model_builder_heart as cmb
 import pickle
 import numpy as np
+from streamlit_toggle import st_toggle_switch
 
 
 def app():
@@ -96,17 +97,20 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-        st.subheader('Naive Bayes Prediction Probability')
-        st.write(prediction_proba_NB)
-        col1, col2 = st.columns(2)
-        with col1:
-            st.text('Why Classifier Report',
-                    help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
-        with col2:
-            st.text('How to read',
-                    help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        enabled = st_toggle_switch("See detailed prediction")
+        if enabled:
+            st.subheader('Naive Bayes Prediction Probability')
+            st.write(prediction_proba_NB)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.text('Why Classifier Report',
+                        help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+            with col2:
+                st.text('How to read',
+                        help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
 
-        cmb.plt_NB()
+            cmb.plt_NB()
+
 
     def KNN():
         st.subheader('K-Nearest Neighbour Prediction')
@@ -116,17 +120,20 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-        st.subheader('KNN Prediction Probability')
-        st.write(prediction_proba_KNN)
-        col1, col2 = st.columns(2)
-        with col1:
-            st.text('Why Classifier Report',
-                    help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
-        with col2:
-            st.text('How to read',
-                    help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        enabled = st_toggle_switch("See detailed prediction")
+        if enabled:
+            st.subheader('KNN Prediction Probability')
+            st.write(prediction_proba_KNN)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.text('Why Classifier Report',
+                        help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+            with col2:
+                st.text('How to read',
+                        help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
 
-        cmb.plt_KNN()
+            cmb.plt_KNN()
+
 
     def DT():
         st.subheader('Decision Tree Prediction')
@@ -136,17 +143,20 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-        st.subheader('Decision Tree Prediction Probability')
-        st.write(prediction_proba_DT)
-        col1, col2 = st.columns(2)
-        with col1:
-            st.text('Why Classifier Report',
-                    help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
-        with col2:
-            st.text('How to read',
-                    help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        enabled = st_toggle_switch("See detailed prediction")
+        if enabled:
+            st.subheader('Decision Tree Prediction Probability')
+            st.write(prediction_proba_DT)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.text('Why Classifier Report',
+                        help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+            with col2:
+                st.text('How to read',
+                        help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
 
-        cmb.plt_DT()
+            cmb.plt_DT()
+
 
     def LR():
         st.subheader('Logistic Regression Prediction')
@@ -156,17 +166,20 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
-        st.subheader('Logistic Regression Probability')
-        st.write(prediction_proba_LR)
-        col1, col2 = st.columns(2)
-        with col1:
-            st.text('Why Classifier Report',
-                    help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
-        with col2:
-            st.text('How to read',
-                    help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+        enabled = st_toggle_switch("See detailed prediction")
+        if enabled:
+            st.subheader('Logistic Regression Probability')
+            st.write(prediction_proba_LR)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.text('Why Classifier Report',
+                        help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+            with col2:
+                st.text('How to read',
+                        help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
 
-        cmb.plt_LR()
+            cmb.plt_LR()
+
 
     def RF():
         st.subheader('Random Forest Prediction')
@@ -176,19 +189,22 @@ def app():
                      unsafe_allow_html=True)
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+        enabled = st_toggle_switch("See detailed prediction")
+        if enabled:
+            st.subheader('Random Forest Probability')
+            st.write(prediction_proba_RF)
+            col1, col2 = st.columns(2)
+            with col1:
+                st.text('Why Classifier Report',
+                        help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
+            with col2:
+                st.text('How to read',
+                        help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
+            cmb.plt_RF()
 
-        st.subheader('Random Forest Probability')
-        st.write(prediction_proba_RF)
-        col1, col2 = st.columns(2)
-        with col1:
-            st.text('Why Classifier Report',
-                    help="It helps assess the model's ability to correctly identify classes and its overall performance in classifying data.")
-        with col2:
-            st.text('How to read',
-                    help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
-        cmb.plt_RF()
 
     def predict_best_algorithm():
+
         if cmb.best_model == 'Naive Bayes':
             NB()
 
@@ -206,8 +222,9 @@ def app():
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
 
+    st.markdown("""👈 Provide your input data in the sidebar""")
     # Displays the user input features
-    with st.expander("Prediction Results"):
+    with st.expander("Prediction Results",expanded=False):
         # Display the input dataframe
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
@@ -218,7 +235,7 @@ def app():
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("Select plots to display",
                                     ["Naive Bayes", "K-Nearest Neighbors", "Decision Tree", "Logistic Regression",
-                                     "Random Forest"], default=[],key="ms_H")
+                                     "Random Forest"], default=[], key="ms_H")
     if "ms_H" not in st.session_state:
         st.session_state.selected_plots = []
     # Check the selected plots and call the corresponding plot functions
@@ -230,7 +247,6 @@ def app():
         with col2:
             st.text('How to read',
                     help="By looking at the cells where the true and predicted labels intersect, you can see the counts of correct and incorrect predictions. This helps evaluate the model's performance in distinguishing between 'No Disease' and 'Disease' categories.")
-
 
     placeholder = st.empty()
 

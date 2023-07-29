@@ -60,6 +60,9 @@ with col2:
 
     _The parameters could include_ `age, gender, lifestyle habits, genetic factors, and existing health conditions` _, among others._
     """)
+    st.write("**To Start**")
+    st.write("Select your model below👇")
+
 st.write("")
 st.write("")
 st.write("")
