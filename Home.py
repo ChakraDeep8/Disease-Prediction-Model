@@ -4,10 +4,13 @@ from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes, Breast_C
 from PIL import Image
 import json
 from res import Header as hd
-from streamlit_lottie import  st_lottie
+from streamlit_lottie import st_lottie
+
+
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
+
 
 lottie_coding = load_lottiefile("res/Logo_animation.json")
 
@@ -66,13 +69,12 @@ hd.colored_header(
     color_name="violet-70",
 )
 
-
 # Add all your application here
+app.add_app("Breast Cancer Detector", Breast_Cancer.app)
+app.add_app("Diabetes Detector", Diabetes.app)
 app.add_app("Heart Disease Detector", Heart_Disease.app)
 app.add_app("Hypertension Detector", Hypertension_App.app)
-app.add_app("Stroke Detector", Stroke_App.app)
-app.add_app("Diabetes Detector", Diabetes.app)
-app.add_app("Breast Cancer Detector", Breast_Cancer.app)
 app.add_app("Kidney Disease Detector", Kidney_App.app)
+app.add_app("Stroke Detector", Stroke_App.app)
 # The main app
 app.run()
