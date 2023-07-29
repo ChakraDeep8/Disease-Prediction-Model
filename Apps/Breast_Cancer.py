@@ -252,7 +252,7 @@ def app():
             ##### `Benign, indicating that the tumor is non-cancerous and does not pose a significant threat to health.`
             """)
 
-    st.markdown("""👈 Provide your input data in the sidebar""")
+    st.markdown("👈 Provide your input data in the sidebar")
     # Displays the user input features
     with st.expander("Prediction Results", expanded=False):
         # Display the input dataframe

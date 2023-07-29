@@ -213,7 +213,7 @@ def app():
         else:
             st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
 
-    st.markdown("""👈 Provide your input data in the sidebar""")
+    st.markdown("👈 Provide your input data in the sidebar")
     # Displays the user input features
     with st.expander("Prediction Results",expanded=False):
         # Display the input dataframe
