@@ -1,6 +1,6 @@
 import streamlit as st
 from res.multiapp import MultiApp
-from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes, Breast_Cancer  # import your app modules here
+from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes, Breast_Cancer, Kidney_App  # import your app modules here
 from PIL import Image
 import json
 from res import Header as hd
@@ -60,12 +60,7 @@ with col2:
 
     _The parameters could include_ `age, gender, lifestyle habits, genetic factors, and existing health conditions` _, among others._
     """)
-    st.write("**To Start**")
-    st.write("Select your model below👇")
 
-st.write("")
-st.write("")
-st.write("")
 hd.colored_header(
     label="Select your disease",
     color_name="violet-70",
@@ -78,5 +73,6 @@ app.add_app("Hypertension Detector", Hypertension_App.app)
 app.add_app("Stroke Detector", Stroke_App.app)
 app.add_app("Diabetes Detector", Diabetes.app)
 app.add_app("Breast Cancer Detector", Breast_Cancer.app)
+app.add_app("Kidney Disease Detector", Kidney_App.app)
 # The main app
 app.run()
