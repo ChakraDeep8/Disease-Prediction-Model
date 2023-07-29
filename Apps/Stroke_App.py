@@ -224,7 +224,7 @@ def app():
         predict_best_algorithm()
 
     # Create a multiselect for all the plot options
-    selected_plots = st.multiselect("Select plots to display",
+    selected_plots = st.multiselect("You can see all plots here👇",
                                     ["Naive Bayes", "K-Nearest Neighbors", "Decision Tree", "Logistic Regression",
                                      "Random Forest"], default=[], key="ms_S")
     if "ms_S" not in st.session_state:
