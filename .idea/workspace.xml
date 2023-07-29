@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="Update res directory">
-      <change afterPath="$PROJECT_DIR$/Apps/Kidney_App.py" afterDir="false" />
+    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="Update Apps and Classifier directories&#10;Add Kidney_App.py module">
       <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_DT.pkl" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_KNN.pkl" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_LR.pkl" afterDir="false" />
@@ -42,17 +41,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_36_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_36_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_50_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_50_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_06_14_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_06_14_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Breast_Cancer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Breast_Cancer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Diabetes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Diabetes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Hypertension_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_breast_cancer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_breast_cancer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_diabetes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_diabetes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_heart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_hypertension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_kidney.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_kidney.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classifier_Models/Classifier_model_builder_stroke.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/breast-cancer_disease_classifier_RF.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_home.py" afterDir="false" />
@@ -467,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690644276681</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Update Apps and Classifier directories&#10;Add Kidney_App.py module">
+      <option name="closed" value="true" />
+      <created>1690644398218</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1690644398218</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +483,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Third update" />
     <MESSAGE value="Some Changes" />
     <MESSAGE value="implement heart disease" />
     <MESSAGE value="Web page buildup" />
@@ -512,6 +507,7 @@
     <MESSAGE value="Lol" />
     <MESSAGE value="Fix heart file error" />
     <MESSAGE value="Update res directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update res directory" />
+    <MESSAGE value="Update Apps and Classifier directories&#10;Add Kidney_App.py module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Apps and Classifier directories&#10;Add Kidney_App.py module" />
   </component>
 </project>
