@@ -103,11 +103,11 @@ def app():
         st.write(df)
 
     # Load the classification models
-    load_clf_NB = pickle.load(open('res/breast-cancer_disease_classifier_NB.pkl', 'rb'))
-    load_clf_KNN = pickle.load(open('res/breast-cancer_disease_classifier_KNN.pkl', 'rb'))
-    load_clf_DT = pickle.load(open('res/breast-cancer_disease_classifier_DT.pkl', 'rb'))
-    load_clf_LR = pickle.load(open('res/breast-cancer_disease_classifier_LR.pkl', 'rb'))
-    load_clf_RF = pickle.load(open('res/breast-cancer_disease_classifier_RF.pkl', 'rb'))
+    load_clf_NB = pickle.load(open('res/pickle/breast-cancer_disease_classifier_NB.pkl', 'rb'))
+    load_clf_KNN = pickle.load(open('res/pickle/breast-cancer_disease_classifier_KNN.pkl', 'rb'))
+    load_clf_DT = pickle.load(open('res/pickle/breast-cancer_disease_classifier_DT.pkl', 'rb'))
+    load_clf_LR = pickle.load(open('res/pickle/breast-cancer_disease_classifier_LR.pkl', 'rb'))
+    load_clf_RF = pickle.load(open('res/pickle/breast-cancer_disease_classifier_RF.pkl', 'rb'))
     # Apply models to make predictions
     prediction_NB = load_clf_NB.predict(df)
     prediction_proba_NB = load_clf_NB.predict_proba(df)
@@ -124,10 +124,17 @@ def app():
         st.subheader('Naive Bayes Prediction')
         NB_prediction = np.array([0, 1])
         if NB_prediction[prediction_NB] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You have heart disease</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Malignant Tumors.</b></p>",
                      unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Malignant tumors are cancerous and have the potential to spread and invade nearby tissues or other parts of the body.`
+                        """)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You have Benign Tumors.</b></p>",
+                     unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Benign tumors are non-cancerous and usually do not invade nearby tissues or spread to other parts of the body.`
+                        """)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Naive Bayes Prediction Probability')
@@ -146,10 +153,17 @@ def app():
         st.subheader('K-Nearest Neighbour Prediction')
         knn_prediction = np.array([0, 1])
         if knn_prediction[prediction_KNN] == 1:
-            st.write("<p style='font-size:20px;color: orange'><b>You have heart disease</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Malignant Tumors.</b></p>",
                      unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Malignant tumors are cancerous and have the potential to spread and invade nearby tissues or other parts of the body.`
+                        """)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You have Benign Tumors.</b></p>",
+                     unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Benign tumors are non-cancerous and usually do not invade nearby tissues or spread to other parts of the body.`
+                        """)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('KNN Prediction Probability')
@@ -168,10 +182,17 @@ def app():
         st.subheader('Decision Tree Prediction')
         DT_prediction = np.array([0, 1])
         if DT_prediction[prediction_DT] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have heart disease</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Malignant Tumors.</b></p>",
                      unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Malignant tumors are cancerous and have the potential to spread and invade nearby tissues or other parts of the body.`
+                        """)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You have Benign Tumors.</b></p>",
+                     unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Benign tumors are non-cancerous and usually do not invade nearby tissues or spread to other parts of the body.`
+                        """)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Decision Tree Prediction Probability')
@@ -190,10 +211,17 @@ def app():
         st.subheader('Logistic Regression Prediction')
         LR_prediction = np.array([0, 1])
         if LR_prediction[prediction_LR] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have heart disease<b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Malignant Tumors.</b></p>",
                      unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Malignant tumors are cancerous and have the potential to spread and invade nearby tissues or other parts of the body.`
+                        """)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You have Benign Tumors.</b></p>",
+                     unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Benign tumors are non-cancerous and usually do not invade nearby tissues or spread to other parts of the body.`
+                        """)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Logistic Regression Probability')
@@ -212,10 +240,17 @@ def app():
         st.subheader('Random Forest Prediction')
         RF_prediction = np.array([0, 1])
         if RF_prediction[prediction_RF] == 1:
-            st.write("<p style='font-size:20px; color: orange'><b>You have heart disease</b></p>",
+            st.write("<p style='font-size:20px; color: orange'><b>You have Malignant Tumors.</b></p>",
                      unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Malignant tumors are cancerous and have the potential to spread and invade nearby tissues or other parts of the body.`
+                        """)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You have Benign Tumors.</b></p>",
+                     unsafe_allow_html=True)
+            st.markdown("""
+                        ##### `Benign tumors are non-cancerous and usually do not invade nearby tissues or spread to other parts of the body.`
+                        """)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Random Forest Probability')
@@ -249,8 +284,8 @@ def app():
             st.write("<p style='font-size:20px;color: green'><b>You have Benign Tumors.</b></p>",
                     unsafe_allow_html=True)
             st.markdown("""
-            ##### `Benign, indicating that the tumor is non-cancerous and does not pose a significant threat to health.`
-            """)
+                        ##### `Benign tumors are non-cancerous and usually do not invade nearby tissues or spread to other parts of the body.`
+                        """)
 
     st.markdown("👈 Provide your input data in the sidebar")
     # Displays the user input features

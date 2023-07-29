@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-url = "res/stroke_data.csv"
+url = "res/dataset/stroke_data.csv"
 stroke = pd.read_csv(url)
 
 
@@ -88,6 +88,7 @@ knn_classifier = KNeighborsClassifier()
 knn_classifier.fit(X_train, y_train)
 # Predict using the K-Nearest Neighbors classifier
 knn_predictions = knn_classifier.predict(X_test)
+knn_cm = confusion_matrix(y_test, knn_predictions)
 knn_accuracy = accuracy_score(y_test, knn_predictions)
 knn_classifier_report = classification_report(y_test, knn_predictions)
 knn_classifier_report_dict = classification_report(y_test, knn_predictions, output_dict=True)
@@ -103,7 +104,7 @@ def plt_KNN():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(knn_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - KNN')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -111,10 +112,10 @@ def plt_KNN():
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
 
-    thresh = nb_cm.max() / 2
-    for i, j in np.ndindex(nb_cm.shape):
-        plt.text(j, i, format(nb_cm[i, j], 'd'), ha='center', va='center',
-                 color='white' if nb_cm[i, j] > thresh else 'black')
+    thresh = knn_cm.max() / 2
+    for i, j in np.ndindex(knn_cm.shape):
+        plt.text(j, i, format(knn_cm[i, j], 'd'), ha='center', va='center',
+                 color='white' if knn_cm[i, j] > thresh else 'black')
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -149,7 +150,7 @@ def plt_DT():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(dt_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - Decision Tree')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -157,10 +158,10 @@ def plt_DT():
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
 
-    thresh = nb_cm.max() / 2
-    for i, j in np.ndindex(nb_cm.shape):
-        plt.text(j, i, format(nb_cm[i, j], 'd'), ha='center', va='center',
-                 color='white' if nb_cm[i, j] > thresh else 'black')
+    thresh = dt_cm.max() / 2
+    for i, j in np.ndindex(dt_cm.shape):
+        plt.text(j, i, format(dt_cm[i, j], 'd'), ha='center', va='center',
+                 color='white' if dt_cm[i, j] > thresh else 'black')
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -195,7 +196,7 @@ def plt_LR():
 
     # Plot confusion matrix for classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(lr_cm, interpolation='nearest', cmap=plt.cm.Reds)
     plt.title('Confusion Matrix - Logistic Regression')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -275,8 +276,8 @@ models = {
 
 best_model = max(models, key=models.get)
 # Saving the model
-pickle.dump(nb_classifier, open('res/stroke_disease_classifier_NB.pkl', 'wb'))
-pickle.dump(knn_classifier, open('res/stroke_disease_classifier_KNN.pkl', 'wb'))
-pickle.dump(dt_classifier, open('res/stroke_disease_classifier_DT.pkl', 'wb'))
-pickle.dump(lr_classifier, open('res/stroke_disease_classifier_LR.pkl', 'wb'))
-pickle.dump(rf_classifier, open('res/stroke_disease_classifier_RF.pkl', 'wb'))
+pickle.dump(nb_classifier, open('res/pickle/stroke_disease_classifier_NB.pkl', 'wb'))
+pickle.dump(knn_classifier, open('res/pickle/stroke_disease_classifier_KNN.pkl', 'wb'))
+pickle.dump(dt_classifier, open('res/pickle/stroke_disease_classifier_DT.pkl', 'wb'))
+pickle.dump(lr_classifier, open('res/pickle/stroke_disease_classifier_LR.pkl', 'wb'))
+pickle.dump(rf_classifier, open('res/pickle/stroke_disease_classifier_RF.pkl', 'wb'))

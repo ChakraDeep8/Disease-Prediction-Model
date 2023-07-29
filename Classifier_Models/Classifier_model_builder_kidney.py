@@ -12,15 +12,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-url = "res/CKD_Preprocessed.csv"
-hype = pd.read_csv(url)
-hype = hype.loc[:, ~hype.columns.str.contains('^Unnamed')]
+url = "res/dataset/kidney.csv"
+kid = pd.read_csv(url)
 
-stroke = pd.read_csv(url)
-# print(hype.info())
 # Ordinal feature encoding
-
-df = hype.copy()
+df = kid.copy()
 encode = ['rbc', 'pc', 'pcc', 'ba', 'htn', 'dm', 'cad', 'appet', 'pe', 'ane']
 
 for col in encode:
@@ -49,9 +45,7 @@ nb_classifier_report = classification_report(y_test, nb_predictions)
 nb_classifier_report_dict = classification_report(y_test, nb_predictions, output_dict=True)
 
 
-
 def plt_NB():
-
     def classifier_report():
         report_df = pd.DataFrame(nb_classifier_report_dict).transpose()
         # Display the classification report as a table using st.write()
@@ -61,7 +55,7 @@ def plt_NB():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Blues)
     plt.title('Confusion Matrix - Naive Bayes')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -83,13 +77,13 @@ def plt_NB():
         st.pyplot()
 
 
-
 """________KNN Algorithm________"""
 # Train the K-Nearest Neighbors classifier
 knn_classifier = KNeighborsClassifier()
 knn_classifier.fit(X_train, y_train)
 # Predict using the K-Nearest Neighbors classifier
 knn_predictions = knn_classifier.predict(X_test)
+knn_cm = confusion_matrix(y_test, knn_predictions)
 knn_accuracy = accuracy_score(y_test, knn_predictions)
 knn_classifier_report = classification_report(y_test, knn_predictions)
 knn_classifier_report_dict = classification_report(y_test, knn_predictions, output_dict=True)
@@ -105,7 +99,7 @@ def plt_KNN():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(knn_cm, interpolation='nearest', cmap=plt.cm.Blues)
     plt.title('Confusion Matrix - KNN')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -113,10 +107,10 @@ def plt_KNN():
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
 
-    thresh = nb_cm.max() / 2
-    for i, j in np.ndindex(nb_cm.shape):
-        plt.text(j, i, format(nb_cm[i, j], 'd'), ha='center', va='center',
-                 color='white' if nb_cm[i, j] > thresh else 'black')
+    thresh = knn_cm.max() / 2
+    for i, j in np.ndindex(knn_cm.shape):
+        plt.text(j, i, format(knn_cm[i, j], 'd'), ha='center', va='center',
+                 color='white' if knn_cm[i, j] > thresh else 'black')
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -125,7 +119,6 @@ def plt_KNN():
         classifier_report()
     with col2:
         st.pyplot()
-
 
 
 """________Decision Tree________"""
@@ -151,7 +144,7 @@ def plt_DT():
 
     # Plot confusion matrix for Naive Bayes classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(dt_cm, interpolation='nearest', cmap=plt.cm.Blues)
     plt.title('Confusion Matrix - Decision Tree')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -159,10 +152,10 @@ def plt_DT():
     plt.xlabel('Predicted Label')
     plt.ylabel('True Label')
 
-    thresh = nb_cm.max() / 2
-    for i, j in np.ndindex(nb_cm.shape):
-        plt.text(j, i, format(nb_cm[i, j], 'd'), ha='center', va='center',
-                 color='white' if nb_cm[i, j] > thresh else 'black')
+    thresh = dt_cm.max() / 2
+    for i, j in np.ndindex(dt_cm.shape):
+        plt.text(j, i, format(dt_cm[i, j], 'd'), ha='center', va='center',
+                 color='white' if dt_cm[i, j] > thresh else 'black')
 
     # Display the confusion matrix on Streamlit
     st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -171,7 +164,6 @@ def plt_DT():
         classifier_report()
     with col2:
         st.pyplot()
-
 
 
 """________Logistic Regression Algorithm________"""
@@ -197,7 +189,7 @@ def plt_LR():
 
     # Plot confusion matrix for classifier
     plt.figure()
-    plt.imshow(nb_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(lr_cm, interpolation='nearest', cmap=plt.cm.Blues)
     plt.title('Confusion Matrix - Logistic Regression')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -217,7 +209,6 @@ def plt_LR():
         classifier_report()
     with col2:
         st.pyplot()
-
 
 
 """________Random Forest Algorithm________"""
@@ -243,7 +234,7 @@ def plt_RF():
 
     # Plot confusion matrix for  classifier
     plt.figure()
-    plt.imshow(rf_cm, interpolation='nearest', cmap=plt.cm.Reds)
+    plt.imshow(rf_cm, interpolation='nearest', cmap=plt.cm.Blues)
     plt.title('Confusion Matrix - Random Forest')
     plt.colorbar()
     plt.xticks([0, 1], ['No Disease', 'Disease'])
@@ -265,7 +256,6 @@ def plt_RF():
         st.pyplot()
 
 
-
 # Compare the 5 models and select the best algorithm
 models = {
     'Naive Bayes': nb_classifier_report,
@@ -277,8 +267,8 @@ models = {
 best_model = max(models, key=models.get)
 
 # Saving the model
-pickle.dump(nb_classifier, open('res/kidney_disease_classifier_NB.pkl', 'wb'))
-pickle.dump(knn_classifier, open('res/kidney_disease_classifier_KNN.pkl', 'wb'))
-pickle.dump(dt_classifier, open('res/kidney_classifier_DT.pkl', 'wb'))
-pickle.dump(lr_classifier, open('res/kidney_disease_classifier_LR.pkl', 'wb'))
-pickle.dump(rf_classifier, open('res/kidney_disease_classifier_RF.pkl', 'wb'))
+pickle.dump(nb_classifier, open('res/pickle/kidney_disease_classifier_NB.pkl', 'wb'))
+pickle.dump(knn_classifier, open('res/pickle/kidney_disease_classifier_KNN.pkl', 'wb'))
+pickle.dump(dt_classifier, open('res/pickle/kidney_disease_classifier_DT.pkl', 'wb'))
+pickle.dump(lr_classifier, open('res/pickle/kidney_disease_classifier_LR.pkl', 'wb'))
+pickle.dump(rf_classifier, open('res/pickle/kidney_disease_classifier_RF.pkl', 'wb'))
