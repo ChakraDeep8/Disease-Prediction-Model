@@ -5,6 +5,8 @@ from res import functions
 from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(
+    page_title="DataAnalyzer",
+    page_icon="📚",
     layout="wide"
 )
 

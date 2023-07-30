@@ -1,5 +1,10 @@
 import streamlit as st  # pip install streamlit
 
+st.set_page_config(
+    page_title="Contact",
+    page_icon="✉️",
+    layout="wide"
+)
 st.header(":mailbox: Get In Touch With Me!")
 
 contact_form = """
