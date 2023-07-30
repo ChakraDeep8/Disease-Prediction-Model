@@ -1,11 +1,28 @@
 import streamlit as st
 from res.multiapp import MultiApp
-from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes, Breast_Cancer, Kidney_App  # import your app modules here
+from Apps import Hypertension_App, Stroke_App, Heart_Disease, Diabetes, Breast_Cancer, \
+    Kidney_App  # import your app modules here
 from PIL import Image
 import json
 from res import Header as hd
 from streamlit_lottie import st_lottie
+from streamlit_extras.switch_page_button import switch_page
+from st_pages import show_pages, Page, hide_pages
 
+st.set_page_config(
+    page_title="Health Track",
+    page_icon=Image.open("images/medical-team.png"),
+    layout="wide"
+)
+
+show_pages(
+    [
+        Page("Home.py", "Home", "🏠"),
+        Page("pages/Dataset.py", "Dataset", ":books:"),
+        Page("pages/Diagonizer.py","Diagonizer", "🏣"),
+        Page("pages/Contact.py", "Contact", "✉️"),
+    ]
+)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -15,12 +32,6 @@ def load_lottiefile(filepath: str):
 lottie_coding = load_lottiefile("res/Logo_animation.json")
 
 app = MultiApp()
-st.set_page_config(
-    page_title="Health Track",
-    page_icon=Image.open("images/medical-team.png"),
-    layout="wide",
-
-)
 
 image = Image.open("images/Health Track.png")
 st.sidebar.image(image, use_column_width=True)
@@ -63,6 +74,11 @@ with col2:
 
     _The parameters could include_ `age, gender, lifestyle habits, genetic factors, and existing health conditions` _, among others._
     """)
+    st.markdown("""Checkout  our Dataset Analyzer""")
+
+    page_switch = st.button("Data Analyzer")
+    if page_switch:
+        switch_page("Dataset")
 
 hd.colored_header(
     label="Select your disease",
