@@ -335,6 +335,7 @@ def app():
             st.write("Treatment decisions are based on factors like cancer stage, grade, overall health, and menopause status.")
             st.write("You can discuss your treatment options with your healthcare team and ask questions at any time.")
 
+
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",
                                     ["Naive Bayes", "K-Nearest Neighbors", "Decision Tree", "Logistic Regression",
