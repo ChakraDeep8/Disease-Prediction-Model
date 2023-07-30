@@ -222,6 +222,39 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+        # Tips, Diagnosis, Treatment, and Recommendations.
+        enabled = st_toggle_switch("Disease: Expert Recommendations.")
+        if enabled:
+            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+            st.subheader("Tips for Stroke Prevention:")
+            prevention_tips = [
+                "Avoid smoking.",
+                "Maintain a healthy weight.",
+                "Limit alcohol consumption.",
+                "Engage in regular exercise.",
+                "Follow the doctor's recommended treatment plan for underlying health conditions."
+            ]
+            for tip in prevention_tips:
+                st.write(f"- {tip}")
+
+            st.subheader("Stroke-Friendly Exercises:")
+            stroke_exercises = [
+                "Walk regularly.",
+                "Use stairs instead of elevators.",
+                "Engage in gardening and housework."
+            ]
+            for exercise in stroke_exercises:
+                st.write(f"- {exercise}")
+
+            st.subheader("Stroke-Friendly Diet:")
+            stroke_diet = [
+                "Fruits: pear, orange, apple, banana, strawberry, grapes.",
+                "Vegetables: carrot, cabbage, broccoli, avocado, tomato, leafy greens.",
+                "Protein: lean meats, poultry, yogurt, fish, eggs, beans, lentils, peas, tofu, nuts.",
+                "Whole grains: oats, bran, quinoa, brown rice, whole-grain bread."
+            ]
+            for food in stroke_diet:
+                st.write(f"- {food}")
 
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",

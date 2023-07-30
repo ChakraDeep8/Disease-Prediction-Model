@@ -253,8 +253,50 @@ def app():
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
         # Call the predict_best_algorithm() function
-        st.caption('Here, The best algorithm is selected among all algorithm')
+        st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+        # Tips, Diagnosis, Treatment, and Recommendations.
+        enabled = st_toggle_switch("Disease: Expert Recommendations.")
+        if enabled:
+            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+            st.subheader("Tips for Managing Kidney Disease:")
+            management_tips = [
+                "Lose weight if overweight.",
+                "Stay physically active to control blood sugar levels.",
+                "Quit smoking.",
+                "Get regular checkups and include kidney health checks.",
+                "Take medications as prescribed.",
+                "Maintain blood pressure below 140/90 or follow your doctor's advice.",
+                "Control blood sugar levels if you have diabetes.",
+                "Manage cholesterol levels within your target range.",
+                "Consume less salt and opt for homemade, low-sodium foods.",
+                "Limit potassium, phosphorus, and protein intake."
+            ]
+            for tip in management_tips:
+                st.write(f"- {tip}")
+
+            st.subheader("Kidney-Friendly Exercises:")
+            kidney_exercises = [
+                "Walking",
+                "Swimming",
+                "Bicycling (indoors or out)",
+                "Skiing",
+                "Aerobic dancing"
+            ]
+            for exercise in kidney_exercises:
+                st.write(f"- {exercise}")
+
+            st.subheader("Kidney-Friendly Diet:")
+            kidney_diet = [
+                "Choose low-sodium, fresh, homemade foods.",
+                "Reduce phosphorus and potassium by avoiding certain foods (e.g., meats, dairy, beans for phosphorus; oranges, potatoes, tomatoes for potassium).",
+                "Consume the right amount of protein to ease kidney workload.",
+                "Include fruits, vegetables, lean meats, eggs, and unsalted seafood.",
+                "Opt for low-phosphorus and low-potassium carb sources (e.g., white bread, pasta).",
+                "Drink water, clear diet sodas, and unsweetened tea."
+            ]
+            for diet in kidney_diet:
+                st.write(f"- {diet}")
 
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",
