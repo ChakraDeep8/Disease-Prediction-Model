@@ -1,4 +1,7 @@
-# Health Track
+# Welcome to Health Track
+**Note**: To execute web app, you can execute Run_command.py or write in terminal "streamlit run Home.py"
+
+
 Concept of the Project:
 In the realm of healthcare, predicting diseases before they manifest can be a game-changer. It can lead to early interventions, better management of health conditions, and improved patient outcomes. To this end, we propose the development of a Disease Prediction Model using Machine Learning (ML) techniques. This model will analyze various health parameters of an individual and predict the likelihood of them developing a specific disease. The parameters could include age, gender, lifestyle habits, genetic factors, and existing health conditions, among others.
 
@@ -28,3 +31,4 @@ Machine Learning Algorithms Used:
 3. Random Forest
 4. K- Nearest Neighbors
 4. Logistic Regression
+
