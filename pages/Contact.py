@@ -4,14 +4,14 @@ st.header(":mailbox: Get In Touch With Me!")
 
 
 contact_form = """
-<form action="https://formsubmit.co/{}" method="POST">
+<form action="https://formsubmit.co/mycusup2023@gmail.com" method="POST">
      <input type="hidden" name="_captcha" value="false">
      <input type="text" name="name" placeholder="Your name" required>
      <input type="email" name="email" placeholder="Your email" required>
      <textarea name="message" placeholder="Your message here"></textarea>
      <button type="submit">Send</button>
 </form>
-""".format(st.secrets["email"])
+"""
 
 st.markdown(contact_form, unsafe_allow_html=True)
 
