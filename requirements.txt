@@ -10,5 +10,5 @@ Pillow~=9.3.0
 sklearn~=0.0.post7
 autoviz~=0.1.730
 plotly~=5.14.1
-st-pages=0.4.3
+st-pages==0.4.3
 openai~=0.27.8
