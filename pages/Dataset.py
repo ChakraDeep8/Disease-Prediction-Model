@@ -38,11 +38,19 @@ def app():
     file_format = st.radio('Select file format:', ('csv', 'excel'), key='file_format')
     dataset = st.file_uploader(label='')
 
-    use_defo = st.selectbox('Use example Dataset', ('Heart', 'kidney'))
+    use_defo = st.selectbox('Use Example Dataset', ('Breast_Cancer', 'Diabetes', 'Heart', 'Hypertension', 'Kidney', 'Stroke'))
+    if 'Breast_Cancer' in use_defo:
+        dataset = 'res/dataset/breast-cancer.csv'
+    if 'Diabetes' in use_defo:
+        dataset = 'res/dataset/diabetes.csv'
     if 'Heart' in use_defo:
         dataset = 'res/dataset/heart.csv'
-    if 'kidney' in use_defo:
+    if 'Hypertension' in use_defo:
+        dataset = 'res/dataset/hypertension_data.csv'
+    if 'Kidney' in use_defo:
         dataset = 'res/dataset/kidney.csv'
+    if 'Stroke' in use_defo:
+        dataset = 'res/dataset/stroke_data.csv'
 
     st.sidebar.header('Import Dataset to Use Available Features: 👉')
 
