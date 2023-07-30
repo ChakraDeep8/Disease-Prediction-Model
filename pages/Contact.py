@@ -5,7 +5,7 @@ st.set_page_config(
     page_icon="✉️",
     layout="wide"
 )
-st.header(":mailbox: Get In Touch With Me!")
+st.header(":mailbox: Get In Touch With Us!")
 
 contact_form = """
 <form action="https://formsubmit.co/mycusup2023@gmail.com" method="POST">
