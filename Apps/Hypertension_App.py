@@ -104,7 +104,7 @@ def app():
             st.write("<p style='font-size:20px;color: orange'><b>You have hypertension.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Naive Bayes Prediction Probability')
@@ -126,7 +126,7 @@ def app():
             st.write("<p style='font-size:20px;color: orange'><b>You have hypertension.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('KNN Prediction Probability')
@@ -148,7 +148,7 @@ def app():
             st.write("<p style='font-size:20px; color: orange'><b>You have hypertension.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Decision Tree Prediction Probability')
@@ -170,7 +170,7 @@ def app():
             st.write("<p style='font-size:20px; color: orange'><b>You have hypertension.<b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Logistic Regression Probability')
@@ -192,7 +192,7 @@ def app():
             st.write("<p style='font-size:20px; color: orange'><b>You have hypertension.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Random Forest Probability')
@@ -218,7 +218,7 @@ def app():
         elif cmb.best_model == 'Random Forest':
             RF()
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
 
     st.markdown("👈 Provide your input data in the sidebar")
     # Displays the user input features
@@ -229,10 +229,11 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+
         # Tips, Diagnosis, Treatment, and Recommendations.
-        enabled = st_toggle_switch("Disease: Expert Recommendations.")
-        if enabled:
-            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+        st.subheader("👨‍⚕️ Expert Insights on Disease")
+        tab1, tab2, tab3 = st.tabs(["Tips", "Exercises", "Diet"])
+        with tab1:
             st.subheader("Tips for Managing Hypertension:")
             management_tips = [
                 "Don't skip breakfast.",
@@ -243,7 +244,7 @@ def app():
             ]
             for tip in management_tips:
                 st.write(f"- {tip}")
-
+        with tab2:
             st.subheader("Exercises Recommendations:")
             exercise_recommendation = [
                 "Exercises for Lowering Blood Pressure:",
@@ -251,7 +252,7 @@ def app():
             ]
             for tip in exercise_recommendation:
                 st.write(f"- {tip}")
-
+        with tab3:
             st.subheader("Dietary Recommendations:")
             dietary_recommendations = [
                 "Eat plenty of fruits and vegetables.",

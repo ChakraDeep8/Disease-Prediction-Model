@@ -96,7 +96,7 @@ def app():
             st.write("<p style='font-size:20px;color: orange'><b>You have heart disease.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Naive Bayes Prediction Probability')
@@ -119,7 +119,7 @@ def app():
             st.write("<p style='font-size:20px;color: orange'><b>You have heart disease.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('KNN Prediction Probability')
@@ -142,7 +142,7 @@ def app():
             st.write("<p style='font-size:20px; color: orange'><b>You have heart disease.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Decision Tree Prediction Probability')
@@ -165,7 +165,7 @@ def app():
             st.write("<p style='font-size:20px; color: orange'><b>You have heart disease.<b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Logistic Regression Probability')
@@ -188,7 +188,7 @@ def app():
             st.write("<p style='font-size:20px; color: orange'><b>You have heart disease.</b></p>",
                      unsafe_allow_html=True)
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
         enabled = st_toggle_switch("See detailed prediction")
         if enabled:
             st.subheader('Random Forest Probability')
@@ -220,7 +220,7 @@ def app():
         elif cmb.best_model == 'Random Forest':
             RF()
         else:
-            st.write("<p style='font-size:20px;color: green'><b>You are fine.</b></p>", unsafe_allow_html=True)
+            st.write("<p style='font-size:20px;color: green'><b>You are fine 👍</b></p>", unsafe_allow_html=True)
 
     st.markdown("👈 Provide your input data in the sidebar")
     # Displays the user input features

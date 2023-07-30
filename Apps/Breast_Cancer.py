@@ -296,10 +296,11 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
-        #Tips, Diagnosis, Treatment, and Recommendations.
-        enabled = st_toggle_switch("Disease: Expert Recommendations.")
-        if enabled:
-            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+
+        # Tips, Diagnosis, Treatment, and Recommendations.
+        st.subheader("👨‍⚕️ Expert Insights on Disease")
+        tab1, tab2, tab3 = st.tabs(["Tips", "Diagnosis", "Treatment"])
+        with tab1:
             st.subheader("Breast Cancer Prevention Tips:")
             prevention_tips = [
                 "Maintain a healthy weight.",
@@ -310,7 +311,7 @@ def app():
             ]
             for tip in prevention_tips:
                 st.write(f"- {tip}")
-
+        with tab2:
             st.subheader("Diagnosis Methods:")
             diagnosis_methods = [
                 "Mammogram and breast ultrasound.",
@@ -318,7 +319,7 @@ def app():
             ]
             for method in diagnosis_methods:
                 st.write(f"- {method}")
-
+        with tab3:
             st.subheader("Treatment Options:")
             treatment_options = [
                 "Surgery (breast-conserving surgery, mastectomy).",
