@@ -18,7 +18,7 @@ for k, v in st.session_state.items():
 ##
 
 # OpenAI API key
-openai.api_key = "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"
+openai.api_key = st.secrets["openai_api_key"]
 
 
 def openai_create(prompt):
