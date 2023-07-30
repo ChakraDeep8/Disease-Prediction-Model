@@ -1,14 +1,20 @@
 import pickle
 import time
-
 import numpy as np
 import pandas as pd
 import streamlit as st
 from streamlit_toggle import st_toggle_switch
 from Classifier_Models import Classifier_model_builder_hypertension as cmb
-
+import json
+from streamlit_lottie import st_lottie
 
 def app():
+    def load_lottiefile(filepath: str):
+        with open(filepath, "r") as f:
+            return json.load(f)
+
+    lottie_coding = load_lottiefile("res/Yoga_Padmasana.json")
+
     st.title("Hypertension Blood Pressure Detector")
     st.info("This app predicts whether a person have any hypertension blood pressure or not")
 
@@ -246,12 +252,25 @@ def app():
                 st.write(f"- {tip}")
         with tab2:
             st.subheader("Exercises Recommendations:")
-            exercise_recommendation = [
-                "Exercises for Lowering Blood Pressure:",
-                "Taking regular exercise lowers blood pressure. Adults should do at least 150 minutes (2 hours and 30 minutes) of moderate-intensity aerobic activity, such as cycling or fast walking every week."
-            ]
-            for tip in exercise_recommendation:
-                st.write(f"- {tip}")
+            c1, c2, c3 = st.columns([1, 1, 1], gap="small")
+            with c1:
+                exercise_recommendation = [
+                    "Exercises for Lowering Blood Pressure:",
+                    "Taking regular exercise lowers blood pressure. Adults should do at least 150 minutes (2 hours and 30 minutes) of moderate-intensity aerobic activity, such as cycling or fast walking every week."
+                ]
+                for tip in exercise_recommendation:
+                    st.write(f"- {tip}")
+            with c3:
+                st_lottie(
+                    lottie_coding,
+                    speed=1,
+                    reverse=False,
+                    loop=True,
+                    quality="medium",
+                    height=None,
+                    width=None,
+                    key=None,
+                )
         with tab3:
             st.subheader("Dietary Recommendations:")
             dietary_recommendations = [

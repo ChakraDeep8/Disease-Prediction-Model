@@ -5,9 +5,16 @@ import pandas as pd
 from Classifier_Models import Classifier_model_builder_stroke as cmb
 import pickle
 import numpy as np
-
+import json
+from streamlit_lottie import st_lottie
 
 def app():
+    def load_lottiefile(filepath: str):
+        with open(filepath, "r") as f:
+            return json.load(f)
+
+    lottie_coding = load_lottiefile("res/Yoga_Back.json")
+
     st.title("Stroke Detector")
     st.info("This app predicts whether a person have chances for stroke or not")
 
@@ -239,13 +246,27 @@ def app():
                 st.write(f"- {tip}")
         with tab2:
             st.subheader("Stroke-Friendly Exercises:")
-            stroke_exercises = [
-                "Walk regularly.",
-                "Use stairs instead of elevators.",
-                "Engage in gardening and housework."
-            ]
-            for exercise in stroke_exercises:
-                st.write(f"- {exercise}")
+            c1, c2, c3 = st.columns([1, 1, 1], gap="small")
+            with c1:
+                stroke_exercises = [
+                    "Walk regularly.",
+                    "Use stairs instead of elevators.",
+                    "Engage in gardening and housework.",
+                    "Do regular exercises."
+                ]
+                for exercise in stroke_exercises:
+                    st.write(f"- {exercise}")
+            with c3:
+                st_lottie(
+                    lottie_coding,
+                    speed=1,
+                    reverse=False,
+                    loop=True,
+                    quality="medium",
+                    height=None,
+                    width=None,
+                    key=None,
+                )
         with tab3:
             st.subheader("Stroke-Friendly Diet:")
             stroke_diet = [

@@ -4,32 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="Update Apps and Classifier directories&#10;Add Kidney_App.py module">
-      <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_DT.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_KNN.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_LR.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_NB.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_RF.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_DT.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_KNN.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_LR.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_NB.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_RF.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_DT.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_KNN.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_LR.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_NB.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_RF.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_DT.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_KNN.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_LR.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_NB.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_RF.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_DT.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_KNN.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_LR.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_NB.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_RF.pkl" afterDir="false" />
+    <list default="true" id="3bceba5c-1534-412c-a912-a524c5b07970" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/res/Yoga_Back.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Yoga_Bhujangasana.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Yoga_Feet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Yoga_Padmasana.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Yoga_Vrikshasana.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DiseasePrediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DiseasePrediction.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-07-2023_08_25_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25-07-2023_08_25_pm__Changes_.xml" afterDir="false" />
@@ -41,9 +21,27 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_36_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_36_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_50_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_05_50_pm__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_06_14_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28-07-2023_06_14_pm__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Diabetes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Diabetes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Heart_Disease.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Heart_Disease.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Hypertension_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Hypertension_App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Kidney_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Kidney_App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Apps/Stroke_App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Stroke_App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/breast-cancer_disease_classifier_RF.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/breast-cancer_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/breast-cancer_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/breast-cancer_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/breast-cancer_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/diabetes_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/heart_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/hypertension_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/kidney_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_DT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_DT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_RF.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/res/pickle/stroke_disease_classifier_RF.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_home.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,10 +103,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Shubham\PycharmProjects\Hypertension_Stroke_DiseasePrediction\res" />
       <recent name="C:\Users\Shubham\PycharmProjects\Hypertension_Stroke_DiseasePrediction\res\dataset" />
       <recent name="C:\Users\Shubham\PycharmProjects\Hypertension_Stroke_DiseasePrediction\Apps" />
       <recent name="C:\Users\Shubham\PycharmProjects\Hypertension_Stroke_DiseasePrediction\Classifier_Models" />
-      <recent name="C:\Users\Shubham\PycharmProjects\Hypertension_Stroke_DiseasePrediction\res" />
       <recent name="C:\Users\deep\PycharmProjects\DiseasePrediction\res" />
     </key>
   </component>
@@ -463,7 +461,63 @@
       <option name="project" value="LOCAL" />
       <updated>1690644398218</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update pickles">
+      <option name="closed" value="true" />
+      <created>1690644701602</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1690644701602</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Updated">
+      <option name="closed" value="true" />
+      <created>1690644884331</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1690644884331</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Caption added Kidney_App.py">
+      <option name="closed" value="true" />
+      <created>1690695293186</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1690695293186</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Tips of Apps Updated">
+      <option name="closed" value="true" />
+      <created>1690699297451</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1690699297451</updated>
+    </task>
+    <task id="LOCAL-00046" summary="update functions">
+      <option name="closed" value="true" />
+      <created>1690716377075</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1690716377075</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Example Dataset.py Updated">
+      <option name="closed" value="true" />
+      <created>1690716809369</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1690716809369</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Update Entire Apps">
+      <option name="closed" value="true" />
+      <created>1690718424437</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1690718424437</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,13 +537,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Some Changes" />
-    <MESSAGE value="implement heart disease" />
-    <MESSAGE value="Web page buildup" />
-    <MESSAGE value="added config.toml and some changes in Home.py" />
-    <MESSAGE value="Major Update!!&#10;1. Change in Web page UI (Make it more user friendly)&#10;2. Add Multiselector for all plots&#10;3. Changes in Classifier files&#10;4. Add Algorithms probability" />
-    <MESSAGE value="CKD_Preprocessed file upload" />
-    <MESSAGE value="Kidney module added" />
     <MESSAGE value="med update" />
     <MESSAGE value="Update 3.0" />
     <MESSAGE value="Added Kidney.py" />
@@ -508,6 +555,13 @@
     <MESSAGE value="Fix heart file error" />
     <MESSAGE value="Update res directory" />
     <MESSAGE value="Update Apps and Classifier directories&#10;Add Kidney_App.py module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Apps and Classifier directories&#10;Add Kidney_App.py module" />
+    <MESSAGE value="update pickles" />
+    <MESSAGE value="Updated" />
+    <MESSAGE value="Caption added Kidney_App.py" />
+    <MESSAGE value="Tips of Apps Updated" />
+    <MESSAGE value="update functions" />
+    <MESSAGE value="Example Dataset.py Updated" />
+    <MESSAGE value="Update Entire Apps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Entire Apps" />
   </component>
 </project>

@@ -19,7 +19,7 @@ show_pages(
     [
         Page("Home.py", "Home", "🏠"),
         Page("pages/Dataset.py", "Dataset", ":books:"),
-        Page("pages/Diagonizer.py","Diagonizer", "🏣"),
+        Page("pages/Diagonizer.py", "Diagonizer", "🏣"),
         Page("pages/Contact.py", "Contact", "✉️"),
     ]
 )

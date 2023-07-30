@@ -5,9 +5,16 @@ from Classifier_Models import Classifier_model_builder_heart as cmb
 import pickle
 import numpy as np
 from streamlit_toggle import st_toggle_switch
+import json
+from streamlit_lottie import st_lottie
 
 
 def app():
+    def load_lottiefile(filepath: str):
+        with open(filepath, "r") as f:
+            return json.load(f)
+
+    lottie_coding = load_lottiefile("res/Yoga_Vrikshasana.json")
     st.title("Heart Disease Detector")
     st.info("This app predicts whether a person have any heart disease or not")
 
@@ -248,20 +255,33 @@ def app():
                 st.write(f"- {tip}")
         with tab2:
             st.subheader("Heart-Healthy Exercises:")
-            exercises = [
-                "Tadasana (Mountain Pose)",
-                "Vrikshasana (Tree Pose)",
-                "Utthita Hastapadasana (Extended Hands and Feet Pose)",
-                "Trikonasana (Triangle Pose)",
-                "Veerabhadrasana (Warrior Pose)",
-                "Utkatasana (Chair Pose)",
-                "Marjariasana (Cat Pose)",
-                "Adho Mukho Svanasana (Downward Facing Dog Pose)",
-                "Bhujangasana (Cobra Pose)",
-                "Dhanurasana (Bow Pose)"
-            ]
-            for exercise in exercises:
-                st.write(f"- {exercise}")
+            c1, c2, c3 = st.columns([1, 1, 1], gap="small")
+            with c1:
+                exercises = [
+                    "Tadasana (Mountain Pose)",
+                    "Vrikshasana (Tree Pose)",
+                    "Utthita Hastapadasana (Extended Hands and Feet Pose)",
+                    "Trikonasana (Triangle Pose)",
+                    "Veerabhadrasana (Warrior Pose)",
+                    "Utkatasana (Chair Pose)",
+                    "Marjariasana (Cat Pose)",
+                    "Adho Mukho Svanasana (Downward Facing Dog Pose)",
+                    "Bhujangasana (Cobra Pose)",
+                    "Dhanurasana (Bow Pose)"
+                ]
+                for exercise in exercises:
+                    st.write(f"- {exercise}")
+            with c3:
+                st_lottie(
+                    lottie_coding,
+                    speed=1,
+                    reverse=False,
+                    loop=True,
+                    quality="medium",
+                    height=None,
+                    width=None,
+                    key=None,
+                )
         with tab3:
             st.subheader("Heart-Healthy Diet:")
             diet_tips = [
