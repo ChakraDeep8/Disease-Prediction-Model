@@ -296,6 +296,43 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+        #Tips, Diagnosis, Treatment, and Recommendations.
+        enabled = st_toggle_switch("Disease: Expert Recommendations.")
+        if enabled:
+            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+            st.subheader("Breast Cancer Prevention Tips:")
+            prevention_tips = [
+                "Maintain a healthy weight.",
+                "Exercise regularly.",
+                "Limit saturated fat intake.",
+                "Avoid alcohol consumption.",
+                "Consider breastfeeding, as it may reduce the risk of breast cancer."
+            ]
+            for tip in prevention_tips:
+                st.write(f"- {tip}")
+
+            st.subheader("Diagnosis Methods:")
+            diagnosis_methods = [
+                "Mammogram and breast ultrasound.",
+                "Biopsy (needle aspiration, needle biopsy, vacuum-assisted biopsy)."
+            ]
+            for method in diagnosis_methods:
+                st.write(f"- {method}")
+
+            st.subheader("Treatment Options:")
+            treatment_options = [
+                "Surgery (breast-conserving surgery, mastectomy).",
+                "Radiotherapy.",
+                "Chemotherapy.",
+                "Hormone therapy.",
+                "Targeted therapy."
+            ]
+            for option in treatment_options:
+                st.write(f"- {option}")
+
+            st.subheader("Note:")
+            st.write("Treatment decisions are based on factors like cancer stage, grade, overall health, and menopause status.")
+            st.write("You can discuss your treatment options with your healthcare team and ask questions at any time.")
 
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",

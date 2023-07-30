@@ -231,6 +231,47 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+        # Tips, Diagnosis, Treatment, and Recommendations.
+        enabled = st_toggle_switch("Disease: Expert Recommendations.")
+        if enabled:
+            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+            st.subheader("Tips for Heart Disease Prevention:")
+            prevention_tips = [
+                "No Smoking",
+                "Reduce Alcohol Consumption",
+                "Control Blood Pressure",
+                "Manage Diabetes",
+                "Take Prescribed Medications"
+            ]
+            for tip in prevention_tips:
+                st.write(f"- {tip}")
+
+            st.subheader("Heart-Healthy Exercises:")
+            exercises = [
+                "Tadasana (Mountain Pose)",
+                "Vrikshasana (Tree Pose)",
+                "Utthita Hastapadasana (Extended Hands and Feet Pose)",
+                "Trikonasana (Triangle Pose)",
+                "Veerabhadrasana (Warrior Pose)",
+                "Utkatasana (Chair Pose)",
+                "Marjariasana (Cat Pose)",
+                "Adho Mukho Svanasana (Downward Facing Dog Pose)",
+                "Bhujangasana (Cobra Pose)",
+                "Dhanurasana (Bow Pose)"
+            ]
+            for exercise in exercises:
+                st.write(f"- {exercise}")
+
+            st.subheader("Heart-Healthy Diet:")
+            diet_tips = [
+                "Choose a low-fat, high-fiber diet with plenty of fruits, vegetables, and whole grains.",
+                "Limit salt intake to no more than 6g (about 1 teaspoon) per day.",
+                "Avoid foods high in saturated fats like fatty meats, butter, and certain oils.",
+                "Include foods with unsaturated fats such as oily fish, avocados, nuts, and seeds.",
+                "Limit sugar intake to reduce the risk of diabetes and heart disease."
+            ]
+            for tip in diet_tips:
+                st.write(f"- {tip}")
 
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",

@@ -211,6 +211,45 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+        # Tips, Diagnosis, Treatment, and Recommendations.
+        enabled = st_toggle_switch("Disease: Expert Recommendations.")
+        if enabled:
+            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+            st.subheader("Tips for Managing Diabetes:")
+            management_tips = [
+                "Cut sugar and refined carbohydrates from your diet.",
+                "Quit smoking.",
+                "Watch your portions.",
+                "Drink water.",
+                "Eat fiber."
+            ]
+            for tip in management_tips:
+                st.write(f"- {tip}")
+
+            st.subheader("Exercise Recommendations:")
+            exercise_recommendations = [
+                "Running",
+                "Cycling",
+                "Yoga",
+                "Water aerobics"
+            ]
+            for exercise in exercise_recommendations:
+                st.write(f"- {exercise}")
+
+            st.subheader("Dietary Recommendations:")
+            dietary_recommendations = [
+                "Beans",
+                "Dark leafy vegetables",
+                "Citrus fruit",
+                "Berries",
+                "Tomatoes",
+                "Fish high in omega-3 fatty acids",
+                "Nuts",
+                "Whole grains",
+                "Milk and yogurt"
+            ]
+            for food in dietary_recommendations:
+                st.write(f"- {food}")
 
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",

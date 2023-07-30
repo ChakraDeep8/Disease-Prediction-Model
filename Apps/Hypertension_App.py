@@ -229,6 +229,38 @@ def app():
         # Call the predict_best_algorithm() function
         st.text('Here, The best algorithm is selected among all algorithm', help='It is based on classifier report')
         predict_best_algorithm()
+        # Tips, Diagnosis, Treatment, and Recommendations.
+        enabled = st_toggle_switch("Disease: Expert Recommendations.")
+        if enabled:
+            st.header("Expert Insights on Disease: Tips, Diagnosis, Treatment, and Recommendations.")
+            st.subheader("Tips for Managing Hypertension:")
+            management_tips = [
+                "Don't skip breakfast.",
+                "Cut down on caffeine.",
+                "Stop smoking.",
+                "Avoid being overweight, which forces the heart to work harder to pump blood around your body.",
+                "Men and women are advised not to drink regularly."
+            ]
+            for tip in management_tips:
+                st.write(f"- {tip}")
+
+            st.subheader("Exercises Recommendations:")
+            exercise_recommendation = [
+                "Exercises for Lowering Blood Pressure:",
+                "Taking regular exercise lowers blood pressure. Adults should do at least 150 minutes (2 hours and 30 minutes) of moderate-intensity aerobic activity, such as cycling or fast walking every week."
+            ]
+            for tip in exercise_recommendation:
+                st.write(f"- {tip}")
+
+            st.subheader("Dietary Recommendations:")
+            dietary_recommendations = [
+                "Eat plenty of fruits and vegetables.",
+                "Eat more fish, including a portion of oily fish.",
+                "Cut down on saturated fat and sugar.",
+                "Eat less salt (no more than 6g a day for adults)."
+            ]
+            for tip in dietary_recommendations:
+                st.write(f"- {tip}")
 
     # Create a multiselect for all the plot options
     selected_plots = st.multiselect("You can see all plots here👇",
