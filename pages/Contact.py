@@ -37,7 +37,7 @@ contact_form = """
      <textarea name="message" placeholder="Your message here"></textarea>
      <button type="submit">Send</button>
 </form>
-""".format(st.secrets["emil_address]")
+""".format(st.secrets["emil_address"])
 
 st.markdown(contact_form, unsafe_allow_html=True)
 
