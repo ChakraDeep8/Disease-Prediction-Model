@@ -7,7 +7,7 @@ import json
 from res import Header as hd
 from streamlit_lottie import st_lottie
 from streamlit_extras.switch_page_button import switch_page
-from st_pages import show_pages, Page, hide_pages
+from st_pages import show_pages, Page
 
 st.set_page_config(
     page_title="Health Track",
