@@ -15,8 +15,8 @@ def app():
 
     lottie_coding = load_lottiefile("res/Yoga_Padmasana.json")
 
-    st.title("Hypertension [Blood Pressure] Detector")
-    st.info("This app predicts whether a person have any hypertension blood pressure or not")
+    st.title("Hypertension Detector")
+    st.info("This app predicts whether a person have any hypertension or not")
 
     st.sidebar.header('User Input Features')
     # st.sidebar.markdown("""
