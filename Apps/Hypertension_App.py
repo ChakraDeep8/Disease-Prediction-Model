@@ -8,6 +8,7 @@ from Classifier_Models import Classifier_model_builder_hypertension as cmb
 import json
 from streamlit_lottie import st_lottie
 
+
 def app():
     def load_lottiefile(filepath: str):
         with open(filepath, "r") as f:
@@ -228,7 +229,7 @@ def app():
 
     st.markdown("👈 Provide your input data in the sidebar")
     # Displays the user input features
-    with st.expander("Prediction Results",expanded=False):
+    with st.expander("Prediction Results", expanded=False):
         # Display the input dataframe
         st.write("Your input values are shown below:")
         st.dataframe(input_df)
