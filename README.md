@@ -31,4 +31,18 @@ Machine Learning Algorithms Used:
 3. Random Forest
 4. K- Nearest Neighbors
 4. Logistic Regression
+# Screenshots
+![front](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/2de9b79d-06d3-4408-9c04-7103028cb9a5)
+
+![selection](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/4b393a9e-7e5d-4a14-98a3-406cdad61d3f)
+
+![Input_prediction](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/a7af6d44-99e0-4702-9b93-6a01623b0a70)
+
+![Input](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/a57a9313-06eb-43fc-a371-a172da12027f)
+
+![detailed prediction](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/54d41068-e79b-448a-a1d6-64b3cce08a8c)
+
+![Expert_Advice](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/c6136de3-b5c0-491a-897c-f3df0f06e2a1)
+
+![plot selection](https://github.com/ChakraDeep8/Health-Track-App/assets/70798511/8cd7317c-214c-4804-a3e8-0a3321f95487)
 
